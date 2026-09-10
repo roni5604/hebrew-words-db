@@ -33,6 +33,19 @@ MIN_LEN = 1
 MAX_LEN = 20
 
 
+# Geresh/gershayim characters used to spell loanwords (ג'ינג'י, ז'קט) or
+# abbreviations (חבל"ז). By decision of the repo owner, these words are kept
+# but WITHOUT the geresh mark - e.g. "ג'וק" is stored as "גוק". This keeps
+# the dictionary to plain, unaccented Hebrew letters only.
+GERESH_CHARS = "'’\""
+
+
+def _strip_geresh(word: str) -> str:
+    for ch in GERESH_CHARS:
+        word = word.replace(ch, "")
+    return word
+
+
 def iter_raw_lines():
     for path in sorted(RAW_DIR.glob("*_raw*.txt")):
         for lineno, line in enumerate(
@@ -40,6 +53,9 @@ def iter_raw_lines():
         ):
             stripped = line.strip()
             if not stripped or stripped.startswith("#"):
+                continue
+            stripped = _strip_geresh(stripped).strip(".,;:!? ")
+            if not stripped:
                 continue
             yield path.name, lineno, stripped
 

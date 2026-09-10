@@ -1,14 +1,14 @@
 {
-  "total_words": 16836,
+  "total_words": 16862,
   "by_first_letter_count": {
-    "א": 1357,
-    "ב": 1855,
+    "א": 1359,
+    "ב": 1857,
     "ג": 1803,
     "ד": 1738,
     "ה": 2012,
     "ו": 1648,
     "ז": 120,
-    "ח": 1980,
+    "ח": 2000,
     "ט": 88,
     "י": 371,
     "כ": 159,
@@ -18,8 +18,8 @@
     "ס": 211,
     "ע": 265,
     "פ": 264,
-    "צ": 121,
-    "ק": 260,
+    "צ": 122,
+    "ק": 261,
     "ר": 230,
     "ש": 410,
     "ת": 278
@@ -28,11 +28,11 @@
     "1": 3,
     "2": 102,
     "3": 785,
-    "4": 2954,
-    "5": 4549,
-    "6": 4388,
-    "7": 2188,
-    "8": 1150,
+    "4": 2956,
+    "5": 4550,
+    "6": 4395,
+    "7": 2198,
+    "8": 1156,
     "9": 554,
     "10": 121,
     "11": 25,
@@ -42,6 +42,7 @@
   "raw_files_processed": [
     "adjectives_slang_raw.txt",
     "extra_batch1_raw.txt",
+    "geresh_normalized_raw.txt",
     "nouns_raw_part1.txt",
     "nouns_raw_part2.txt",
     "roni_contribution_1_raw.txt",
@@ -55,5 +56,5 @@
     "verbs_raw_part1.txt",
     "wordboxgame_seed_raw.txt"
   ],
-  "rejected_line_count": 47
+  "rejected_line_count": 44
 }
