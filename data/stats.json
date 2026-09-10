@@ -1,5 +1,5 @@
 {
-  "total_words": 16862,
+  "total_words": 18472,
   "by_first_letter_count": {
     "א": 1359,
     "ב": 1857,
@@ -9,7 +9,7 @@
     "ו": 1648,
     "ז": 120,
     "ח": 2000,
-    "ט": 88,
+    "ט": 1698,
     "י": 371,
     "כ": 159,
     "ל": 297,
@@ -26,17 +26,17 @@
   },
   "by_length_count": {
     "1": 3,
-    "2": 102,
-    "3": 785,
-    "4": 2956,
-    "5": 4550,
-    "6": 4395,
-    "7": 2198,
-    "8": 1156,
-    "9": 554,
-    "10": 121,
-    "11": 25,
-    "12": 16,
+    "2": 104,
+    "3": 825,
+    "4": 3127,
+    "5": 4910,
+    "6": 4836,
+    "7": 2466,
+    "8": 1330,
+    "9": 648,
+    "10": 150,
+    "11": 45,
+    "12": 27,
     "13": 1
   },
   "raw_files_processed": [
@@ -52,6 +52,7 @@
     "roni_contribution_5_raw.txt",
     "roni_contribution_6_raw.txt",
     "roni_contribution_7_raw.txt",
+    "roni_contribution_8_raw.txt",
     "verbs_core_raw.txt",
     "verbs_raw_part1.txt",
     "wordboxgame_seed_raw.txt"
