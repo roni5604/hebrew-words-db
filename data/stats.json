@@ -1,8 +1,8 @@
 {
-  "total_words": 15218,
+  "total_words": 15219,
   "by_first_letter_count": {
     "א": 1357,
-    "ב": 1854,
+    "ב": 1855,
     "ג": 1803,
     "ד": 1738,
     "ה": 1996,
@@ -31,7 +31,7 @@
     "4": 2748,
     "5": 4103,
     "6": 3912,
-    "7": 1933,
+    "7": 1934,
     "8": 1015,
     "9": 496,
     "10": 115,
@@ -49,6 +49,7 @@
     "roni_contribution_3_raw.txt",
     "roni_contribution_4_raw.txt",
     "roni_contribution_5_raw.txt",
+    "roni_contribution_6_raw.txt",
     "verbs_core_raw.txt",
     "verbs_raw_part1.txt",
     "wordboxgame_seed_raw.txt"
