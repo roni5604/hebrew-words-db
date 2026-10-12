@@ -148,3 +148,7 @@ Because their licenses (AGPL / CC-BY-NC / CC-BY-SA) make them legally
 awkward or outright unusable for many commercial and closed-source
 projects. See [`docs/SOURCES.md`](docs/SOURCES.md) for details. This
 repo trades a bit of completeness for **zero legal friction**.
+
+---
+
+**Maintainer / מתחזק:** [Roni Michaeli · רוני מיכאלי](https://ronimichaeli.com/) — software developer & AI specialist ([פרופיל בעברית](https://ronimichaeli.com/he/)).
