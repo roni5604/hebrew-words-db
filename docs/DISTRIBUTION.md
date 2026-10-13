@@ -36,6 +36,11 @@
 
 לפי סדר עדיפות:
 
+0. **תיאור, אתר ונושאים** (3 דק') — בעמוד הריפו, גלגל השיניים ליד About:
+   - **Description:** `Hebrew word list · מאגר מילים בעברית — the largest public-domain (CC0) list of Hebrew words: 67k+ incl. plurals & verb conjugations. Plain TXT/JSON/CSV, free for any use.`
+   - **Website:** `https://roni5604.github.io/hebrew-words-db/`
+   - **Topics (20):** `hebrew hebrew-wordlist hebrew-words hebrew-dictionary hebrew-language hebrew-nlp wordlist word-list dictionary lexicon dataset open-data public-domain cc0 nlp spellcheck word-games wordle ivrit llm`
+   - **GitHub Pages:** Settings → Pages → Deploy from a branch → `main` / `/docs` → Save.
 1. **תמונת שיתוף** (2 דק'): Settings → General → Social preview → העלה את `docs/social-preview.png`.
 2. **Zenodo** (5 דק'): היכנס ל-zenodo.org עם GitHub → Settings → GitHub → הפעל את `hebrew-words-db`. **חייב לקרות לפני ה-Release הראשון** כדי שיקבל DOI.
 3. **Release ראשון** (2 דק'): Releases → Draft a new release → תג `v1.0.0` → Publish. ה-workflow יצרף את הקבצים, ו-Zenodo יפיק DOI. אחר כך הוסף את ה-DOI ל-`CITATION.cff` ול-README.
