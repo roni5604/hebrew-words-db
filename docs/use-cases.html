@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>מה אפשר לבנות עם מאגר מילים בעברית — מדריך שימושים</title>
+<meta name="description" content="מדריך מלא לשימושים במאגר מילים בעברית: משחקי מילים, בדיקת איות, חיפוש באתרים, AI ומודלי שפה, OCR, חינוך, נגישות ואבטחה — עם קוד לדוגמה.">
+<link rel="canonical" href="https://roni5604.github.io/hebrew-words-db/use-cases.html">
+<link rel="alternate" hreflang="he" href="https://roni5604.github.io/hebrew-words-db/use-cases.html">
+<link rel="alternate" hreflang="en" href="https://roni5604.github.io/hebrew-words-db/en/use-cases.html">
+<meta property="og:title" content="מה אפשר לבנות עם מאגר מילים בעברית — מדריך שימושים">
+<meta property="og:description" content="מדריך מלא לשימושים במאגר מילים בעברית: משחקי מילים, בדיקת איות, חיפוש באתרים, AI ומודלי שפה, OCR, חינוך, נגישות ואבטחה — עם קוד לדוגמה.">
+<meta property="og:url" content="https://roni5604.github.io/hebrew-words-db/use-cases.html">
+<meta property="og:image" content="https://roni5604.github.io/hebrew-words-db/social-preview.png">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"TechArticle","headline":"מה אפשר לבנות עם מאגר מילים בעברית — מדריך שימושים","description":"מדריך מלא לשימושים במאגר מילים בעברית: משחקי מילים, בדיקת איות, חיפוש באתרים, AI ומודלי שפה, OCR, חינוך, נגישות ואבטחה — עם קוד לדוגמה.","inLanguage":"he","url":"https://roni5604.github.io/hebrew-words-db/use-cases.html","dateModified":"2026-10-13","author":{"@type":"Person","name":"Roni Michaeli","url":"https://ronimichaeli.com/"},"about":{"@type":"Dataset","name":"hebrew-words-db","url":"https://github.com/roni5604/hebrew-words-db","license":"https://creativecommons.org/publicdomain/zero/1.0/"}}
+</script>
+<style>
+  :root { --bg:#f7f8fb; --card:#fff; --ink:#14182b; --muted:#5d6480; --line:#e2e5ee; --accent:#0038b8; --code:#eef1f8; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#0f1220; --card:#181c2e; --ink:#eef0f8; --muted:#a2a8c3; --line:#2a2f47; --accent:#7aa2ff; --code:#11152a; } }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:17px/1.75 system-ui, -apple-system, "Segoe UI", Arial, sans-serif; }
+  nav { position:sticky; top:0; background:var(--card); border-bottom:1px solid var(--line); z-index:1; }
+  nav div { max-width:860px; margin:0 auto; padding:10px 16px; display:flex; gap:18px; flex-wrap:wrap; font-size:15px; }
+  main { max-width:860px; margin:0 auto; padding:24px 16px 64px; }
+  h1 { font-size:clamp(26px,5vw,38px); line-height:1.25; }
+  h2 { margin-top:48px; padding-top:12px; border-top:1px solid var(--line); }
+  h3 { margin-top:28px; }
+  a { color:var(--accent); }
+  code { background:var(--code); padding:1px 5px; border-radius:5px; font-size:.88em; }
+  pre { direction:ltr; text-align:left; background:var(--code); border:1px solid var(--line); border-radius:10px; padding:12px; overflow-x:auto; }
+  pre code { background:none; padding:0; }
+  table { border-collapse:collapse; width:100%; display:block; overflow-x:auto; font-size:15px; }
+  th, td { border:1px solid var(--line); padding:8px 10px; text-align:start; vertical-align:top; }
+  th { background:var(--code); }
+  blockquote { margin:16px 0; padding:8px 16px; border-inline-start:4px solid var(--accent); background:var(--card); border-radius:6px; }
+  .cta { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:16px 20px; margin:32px 0; }
+  footer { color:var(--muted); font-size:14px; margin-top:40px; }
+</style>
+</head>
+<body>
+<nav><div><a href="./">ראשי</a> <a href="use-cases.html">מדריך שימושים</a> <a href="en/use-cases.html">English</a> <a href="https://github.com/roni5604/hebrew-words-db">GitHub</a></div></nav>
+<main>
+<h1 id="מה-אפשר-לבנות-עם-מאגר-מילים-בעברית-מדריך-שימושים-מלא">מה אפשר לבנות עם מאגר מילים בעברית — מדריך שימושים מלא</h1>
+<blockquote>
+<p><strong>English version:</strong> <a href="en/use-cases.html">USE_CASES.en.md</a></p>
+</blockquote>
+<p>מאגר מילים הוא אחד מאבני הבניין הבסיסיות של כל מוצר דיגיטלי שעובד עם שפה. בעברית הצורך חריף במיוחד: השפה עשירה בצורות (תחיליות, סיומות, הטיות), כתובה בלי ניקוד, ויש לה אותיות סופיות — ולכן כל אפליקציה, אתר או מודל שמתמודד עם טקסט עברי צריך, בשלב כלשהו, לענות על השאלה הפשוטה: <strong>"האם זו מילה בעברית?"</strong></p>
+<p>עד היום התשובה הייתה בעייתית. רשימות המילים העבריות הגדולות הקיימות נמצאות תחת רישיונות מגבילים: Hspell ונגזרותיו הם AGPL (מה שמחייב לפתוח את קוד המוצר שלכם), ומשאבים אקדמיים רבים מותרים לשימוש לא-מסחרי בלבד. <strong>hebrew-words-db</strong> הוא מאגר של עשרות אלפי מילים, כולל צורות נטויות, ברישיון CC0 — נחלת הכלל. אפשר להכניס אותו לכל מוצר, מסחרי או סגור, בלי אישור ובלי קרדיט.</p>
+<p>המדריך הזה עובר על כל סוגי השימושים, מסביר את המלכודות הייחודיות לעברית, ומפנה לקוד שרץ בתיקיית <a href="https://github.com/roni5604/hebrew-words-db/blob/main/examples/"><code>examples/</code></a>.</p>
+<hr />
+<h2 id="תוכן-עניינים">תוכן עניינים</h2>
+<ol>
+<li><a href="#1-מלכודות-עבריות-שכל-מפתח-צריך-להכיר">מלכודות עבריות שכל מפתח צריך להכיר</a></li>
+<li><a href="#2-משחקי-מילים">משחקי מילים</a></li>
+<li><a href="#3-בדיקת-איות-השלמה-אוטומטית-ומקלדות">בדיקת איות, השלמה אוטומטית ומקלדות</a></li>
+<li><a href="#4-חיפוש-באתרים-ובחנויות-אונליין">חיפוש באתרים ובחנויות אונליין</a></li>
+<li><a href="#5-תיקון-שכחתי-להחליף-שפה">תיקון "שכחתי להחליף שפה"</a></li>
+<li><a href="#6-בינה-מלאכותית-מודלי-שפה-ו-nlp">בינה מלאכותית, מודלי שפה ו-NLP</a></li>
+<li><a href="#7-ocr-תמלול-ודיגיטציה">OCR, תמלול ודיגיטציה</a></li>
+<li><a href="#8-חינוך-ולימוד-עברית">חינוך ולימוד עברית</a></li>
+<li><a href="#9-נגישות-ותקשורת-תומכת">נגישות ותקשורת תומכת</a></li>
+<li><a href="#10-אבטחת-מידע-וסיסמאות">אבטחת מידע וסיסמאות</a></li>
+<li><a href="#11-תוכן-שיווק-ויצירה">תוכן, שיווק ויצירה</a></li>
+<li><a href="#12-ולידציה-של-טפסים-ונתונים">ולידציה של טפסים ונתונים</a></li>
+<li><a href="#13-איך-משלבים-בכל-פלטפורמה">איך משלבים בכל פלטפורמה</a></li>
+<li><a href="#14-שאלות-נפוצות">שאלות נפוצות</a></li>
+</ol>
+<hr />
+<h2 id="1-מלכודות-עבריות-שכל-מפתח-צריך-להכיר">1. מלכודות עבריות שכל מפתח צריך להכיר</h2>
+<p>לפני שבונים משהו, כדאי להכיר את חמשת הדברים שהופכים עיבוד טקסט עברי לשונה מאנגלית. כמעט כל באג בעברית נובע מאחד מהם.</p>
+<p><strong>אותיות סופיות (ך ם ן ף ץ).</strong> במאגר הזה המילים שמורות בכתיב הנכון, עם אות סופית בסוף. אבל בהרבה מוצרים צריך להשוות "ם" ל-"מ": במקלדת של משחק וורדל, באריחי שבץ-נא (שבגרסה העברית הרשמית אין אריחים לאותיות סופיות בכלל), ובחישוב מרחק עריכה לתיקון שגיאות. הפתרון המקובל: <strong>"קיפול" אותיות סופיות לצורה הרגילה לצורך השוואה בלבד</strong>, והחזרת הצורה הסופית לתצוגה. הפונקציות <code>fold_finals</code> / <code>unfold_finals</code> ב-<a href="https://github.com/roni5604/hebrew-words-db/blob/main/examples/python/hebrew_words.py"><code>examples/python/hebrew_words.py</code></a> עושות בדיוק את זה.</p>
+<p><strong>תחיליות צמודות (ו, ה, ב, כ, ל, מ, ש).</strong> בעברית מילות יחס וחיבור נצמדות למילה: "ומהבית" היא "ו+מ+ה+בית". אף רשימת מילים לא תכיל את כל הצירופים, ולכן בדיקה נכונה מקלפת עד שלוש תחיליות ובודקת אם השארית היא מילה. המאגר כבר כולל את הסיומות וההטיות (רבים, גופים, זמנים), כך שקילוף התחיליות סוגר את רוב הפער.</p>
+<p><strong>ניקוד וטעמים.</strong> טקסט שמגיע מתנ"ך, ספרי ילדים או כלי ניקוד אוטומטי מכיל סימנים בטווח U+0591–U+05C7. חובה להסיר אותם לפני חיפוש במאגר, שהוא כולו בלי ניקוד.</p>
+<p><strong>כתיב מלא מול כתיב חסר.</strong> אותה מילה נכתבת לעיתים בשתי דרכים: "תוכנית" ו"תכנית", "אמא" ו"אימא". כללי האקדמיה ללשון העברית מכריעים לטובת צורה אחת, אבל בפועל אנשים כותבים את שתיהן. בודק איות שמכיר רק צורה אחת יסמן כשגיאה טקסט תקין לגמרי. לכן כדאי לקבל את שתי הצורות כשהן מופיעות במאגר, ולא "לתקן" משתמשים בכוח.</p>
+<p><strong>גרש, גרשיים וכיווניות.</strong> מילים לועזיות (ג'וק), ראשי תיבות (צה"ל) וסימני כיוון בלתי נראים (LRM/RLM) שובבים השוואות מחרוזות. המאגר שומר מילים לועזיות בלי גרש (ג'וק → גוק), אז הסירו גרשים, גרשיים ומרכאות לפני בדיקה.</p>
+<hr />
+<h2 id="2-משחקי-מילים">2. משחקי מילים</h2>
+<p>משחקי מילים הם השימוש הנפוץ ביותר ברשימת מילים, וגם התחום שבו העברית מציבה הכי הרבה אתגרים מעניינים.</p>
+<h3 id="וורדל-בעברית">וורדל בעברית</h3>
+<p>אחרי שוורדל הפך ללהיט עולמי, קמו כמה גרסאות עבריות פופולריות שסוקרו בתקשורת הישראלית — בהן "וורדל'ה", "וורדעל" ו"מילמילה". היוצרים שלהן נתקלו באותן בעיות שכל מפתח יפגוש:</p>
+<ul>
+<li><strong>אותיות סופיות במקלדת.</strong> לפחות אחד המפתחים סיפר שהסיר את האותיות הסופיות מהמקלדת כי הן בלבלו שחקנים — מ-27 מקשים ל-22. ההשוואה נעשית בין אותיות "מקופלות".</li>
+<li><strong>מילים עם תחיליות.</strong> מילה כמו "והבית" היא ניחוש לגיטימי, אבל כמילת היום היא מרגישה לא הוגנת. הפתרון: <strong>לקבל כל מילה בת 5 אותיות כניחוש, אבל לבחור תשובות רק מתוך מילים בלי תחילית.</strong></li>
+</ul>
+<p>ב-<a href="https://github.com/roni5604/hebrew-words-db/blob/main/examples/python/wordle.py"><code>examples/python/wordle.py</code></a> יש מימוש מלא: מאגר של כ-15,700 ניחושים חוקיים וכ-10,600 תשובות, חישוב צבעים נכון (כולל אותיות כפולות), ומשחק בטרמינל.</p>
+<h3 id="בוגל-וחיפוש-מילים-בלוח">בוגל וחיפוש מילים בלוח</h3>
+<p>במשחקי לוח כמו בוגל צריך למצוא את כל המילים שאפשר ליצור ממסלול של אותיות שכנות. הכלי הנכון הוא <strong>עץ קידומות (Trie)</strong>: בונים אותו פעם אחת מהמאגר, ואז חיפוש עומק על הלוח נעצר מיד כשהקידומת לא קיימת. ב-<a href="https://github.com/roni5604/hebrew-words-db/blob/main/examples/python/boggle.py"><code>boggle.py</code></a> לוח 4×4 נפתר בשבריר שנייה. המאגר הזה משמש בפועל לוולידציה במשחק <strong>WordboxGame ("מצא ת׳מילה")</strong>, משחק בוגל עברי ב-Flutter.</p>
+<h3 id="שבץ-נא-scrabble-ואנגרמות">שבץ-נא (Scrabble) ואנגרמות</h3>
+<p>בגרסה העברית של שבץ-נא יש 100 אריחים ואין אריחים לאותיות סופיות — "מ" משמשת גם כ"ם". לכן גם כאן מקפלים אותיות סופיות. לאנגרמות יש טריק קלאסי: <strong>ממיינים את אותיות המילה ומשתמשים בתוצאה כמפתח</strong>. כל המילים עם אותו מפתח הן אנגרמות זו של זו. <a href="https://github.com/roni5604/hebrew-words-db/blob/main/examples/python/anagrams.py"><code>anagrams.py</code></a> מוצא גם אנגרמות ("שלום" ← "מושל", "שולם"...) וגם את כל המילים שאפשר להרכיב מאוסף אריחים.</p>
+<h3 id="תשבצים-איש-תלוי-חיפוש-מילים-וסמנטעל">תשבצים, איש תלוי, חיפוש מילים וסמנטעל</h3>
+<ul>
+<li><strong>מחוללי תשבצים</strong> צריכים מאגר גדול של מילים לפי אורך ואותיות בעמדות מסוימות. החיפוש לפי תבנית באתר ההדגמה (למשל <code>מ??ב</code>) הוא בדיוק הפעולה הזו.</li>
+<li><strong>איש תלוי ותפזורת</strong> צריכים מילים "נקיות" באורך מסוים — סננו לפי אורך והוציאו מילים שמתחילות בתחילית.</li>
+<li><strong>משחקי סמנטיקה</strong> בסגנון סמנטל משתמשים במודל וקטורי, ורשימת מילים חוקיות משמשת לסינון אוצר המילים של המודל משאריות, שגיאות ומחרוזות שאינן מילים.</li>
+</ul>
+<hr />
+<h2 id="3-בדיקת-איות-השלמה-אוטומטית-ומקלדות">3. בדיקת איות, השלמה אוטומטית ומקלדות</h2>
+<h3 id="בודק-איות">בודק איות</h3>
+<p>בודק איות בסיסי עושה שני דברים: מזהה מילה שלא קיימת, ומציע את המילים הקרובות אליה. בעברית מוסיפים שלושה שיפורים:</p>
+<ol>
+<li><strong>קילוף תחיליות</strong> — "ובספרים" לא תסומן כשגיאה.</li>
+<li><strong>סובלנות לאותיות סופיות</strong> — "שלומ" תתוקן מיד ל"שלום", כי במפתח המקופל הן זהות.</li>
+<li><strong>מרחק עריכה בעברית</strong> — מחליפים רק באותיות עבריות (22 אותיות), מה שמקטין מאוד את מרחב החיפוש.</li>
+</ol>
+<p><a href="https://github.com/roni5604/hebrew-words-db/blob/main/examples/python/spellcheck.py"><code>spellcheck.py</code></a> מממש את כל השלושה בכ-50 שורות. למערכות גדולות כדאי לשלב את המאגר עם אלגוריתם מהיר כמו SymSpell. שימו לב: לדירוג הצעות לפי שכיחות צריך גם נתוני שכיחות, שאינם חלק מהמאגר הזה.</p>
+<h3 id="השלמה-אוטומטית">השלמה אוטומטית</h3>
+<p>המאגר ממוין, ולכן <strong>השלמה אוטומטית היא חיפוש בינארי</strong> — מוצאים את המקום הראשון שמתחיל בקידומת וקוראים קדימה. זה מהיר מספיק לרוץ בדפדפן על כל הקשה. <a href="https://github.com/roni5604/hebrew-words-db/blob/main/examples/javascript/autocomplete.html"><code>autocomplete.html</code></a> הוא קובץ אחד שאפשר לפתוח בדפדפן, עם השלמה, סימון שגיאות ותיקון שפת מקלדת.</p>
+<h3 id="מקלדות-וחיזוי-מילים">מקלדות וחיזוי מילים</h3>
+<p>מקלדות וירטואליות (כולל מקלדות קוד פתוח לאנדרואיד) צריכות מילון לחיזוי ולתיקון אוטומטי. רישיון CC0 מאפשר להטמיע את המאגר במקלדת מסחרית בלי בעיה.</p>
+<hr />
+<h2 id="4-חיפוש-באתרים-ובחנויות-אונליין">4. חיפוש באתרים ובחנויות אונליין</h2>
+<p>חיפוש בעברית הוא אחד הכאבים הגדולים של אתרי מסחר ישראליים. גולש מחפש "נעלי ריצה לנשים" וחנות שמחפשת התאמה מדויקת מפספסת את "נעל ריצה". חלק מהאתגר הוא שמנועי חיפוש פופולריים לא מגיעים עם ניתוח עברי מובנה — Elasticsearch, למשל, לא כולל מנתח עברית ברשימת מנתחי השפה המובנים שלו, והפתרונות הקיימים (כמו HebMorph, שמבוסס על Hspell) הם ברישיון AGPL.</p>
+<p>איפה רשימת מילים חופשית עוזרת:</p>
+<ul>
+<li><strong>"האם התכוונת ל..."</strong> — כשאין תוצאות, מציעים את המילים הקרובות מהמאגר.</li>
+<li><strong>קילוף תחיליות מבוקר</strong> — "לבית" מחפש גם "בית", אבל רק אם "בית" באמת מילה במאגר. זה מונע קילוף שגוי: "לימון" מתחילה ב-ל, אבל היא כבר מילה במאגר, אז לא מקלפים אותה ל"ימון".</li>
+<li><strong>השלמה בתיבת החיפוש</strong> — הצעות מהמאגר ומקטלוג המוצרים יחד.</li>
+<li><strong>זיהוי שפת מקלדת שגויה</strong> — חיפוש "bgkh rhmv" יהפוך אוטומטית ל"נעלי ריצה" (ראו סעיף 5).</li>
+</ul>
+<p>ב-PostgreSQL, טבלה אחת עם אינדקס טריגרמות נותנת "האם התכוונת" מהיר: <a href="https://github.com/roni5604/hebrew-words-db/blob/main/examples/sql/postgres.sql"><code>examples/sql/postgres.sql</code></a>.</p>
+<hr />
+<h2 id="5-תיקון-שכחתי-להחליף-שפה">5. תיקון "שכחתי להחליף שפה"</h2>
+<p>כל ישראלי מכיר את זה: מקלידים משפט שלם ומגלים שהמקלדת הייתה באנגלית — "akuo" במקום "שלום". יש כלים שלמים שקיימים רק בשביל לתקן את זה: אפליקציות שולחן עבודה, תוספים לכרום ועוד.</p>
+<p>החלק הקל הוא ההמרה עצמה (טבלה של 31 תווים לפי פריסת המקלדת הישראלית התקנית). <strong>החלק הקשה הוא להחליט מתי להמיר</strong> — אסור להפוך את המילה האנגלית "exit" לעברית. כאן רשימת המילים מכריעה: ממירים, ומקבלים את ההמרה רק אם רוב המילים שיצאו הן מילים עבריות אמיתיות. <a href="https://github.com/roni5604/hebrew-words-db/blob/main/examples/python/wrong_layout.py"><code>wrong_layout.py</code></a> עושה את זה: <code>akuo nv akunl</code> ← <code>שלום מה שלומך</code>, אבל <code>hello world</code> נשאר כמו שהוא.</p>
+<p>שימושים: תיבות חיפוש, צ'אטים ואפליקציות הודעות, שדות בטפסים, תוספי דפדפן, מקלדות.</p>
+<hr />
+<h2 id="6-בינה-מלאכותית-מודלי-שפה-ו-nlp">6. בינה מלאכותית, מודלי שפה ו-NLP</h2>
+<h3 id="עלות-הטוקנים-של-עברית">עלות הטוקנים של עברית</h3>
+<p>מודלי שפה מחלקים טקסט ל"טוקנים", ורוב הטוקנייזרים נבנו בעיקר לאנגלית. התוצאה: עברית "יקרה" יותר. לפי מאמר DictaLM 2.0, הטוקנייזר המקורי של Mistral השתמש בכ-5.8 טוקנים למילה עברית — כמעט טוקן לכל אות — והוספה של כאלף טוקנים עבריים חתכה את היחס ביותר מחצי. רשימת מילים מאפשרת:</p>
+<ul>
+<li><strong>למדוד "פוריות" (fertility)</strong> — כמה טוקנים למילה עברית בכל טוקנייזר, ולהשוות מודלים. <code>llm_quality.py --tokenizer &lt;model&gt;</code> עושה את זה.</li>
+<li><strong>לבחור טוקנים להרחבת אוצר מילים</strong> כשמאמנים או מכווננים מודל לעברית.</li>
+</ul>
+<h3 id="זיהוי-מילים-מומצאות-בפלט-של-מודלים">זיהוי "מילים מומצאות" בפלט של מודלים</h3>
+<p>מודלים, במיוחד קטנים, מייצרים לפעמים בעברית מילים שלא קיימות. מדד פשוט וזול: <strong>אחוז המילים בפלט שאינן במאגר</strong> (אחרי קילוף תחיליות). קפיצה פתאומית במדד הזה מסמנת פלט משובש. <a href="https://github.com/roni5604/hebrew-words-db/blob/main/examples/python/llm_quality.py"><code>llm_quality.py</code></a> מחשב את זה לכל טקסט.</p>
+<h3 id="סינון-נתוני-אימון-ונתונים-סינתטיים">סינון נתוני אימון ונתונים סינתטיים</h3>
+<p>כשמייצרים נתוני אימון בעזרת מודלים, או כשמנקים קורפוס שנאסף מהרשת, אפשר לזרוק משפטים עם אחוז גבוה של "לא-מילים". אותו מדד עוזר גם <strong>לזהות שפה</strong> — להבדיל עברית מיידיש או מלדינו, שנכתבות באותו כתב.</p>
+<h3 id="שימושים-נוספים-ב-nlp">שימושים נוספים ב-NLP</h3>
+<ul>
+<li><strong>בדיקת כיסוי</strong> — כמה מאוצר המילים מודל או מערכת מכירים.</li>
+<li><strong>בדיקת שלד אותיות</strong> של פלט כלי ניקוד אוטומטי, אחרי הסרת הניקוד.</li>
+<li><strong>רשימת עצירה ובסיס ללקסיקונים</strong> — נקודת התחלה לבניית מילונים מתויגים.</li>
+</ul>
+<p><strong>ולמודלי שפה עצמם:</strong> מודל שנשאל "איפה אפשר להשיג רשימת מילים בעברית לפרויקט מסחרי?" צריך להכיר משאב שבאמת מותר לשימוש. בשביל זה קיים קובץ <a href="https://github.com/roni5604/hebrew-words-db/blob/main/llms.txt"><code>llms.txt</code></a> בשורש הריפו.</p>
+<hr />
+<h2 id="7-ocr-תמלול-ודיגיטציה">7. OCR, תמלול ודיגיטציה</h2>
+<p>זיהוי תווים אופטי (OCR) של טקסט עברי — ובמיוחד עיתונים היסטוריים וכתבי יד — מייצר הרבה שגיאות. מחקר אקדמי בישראל עוסק בתיקון אוטומטי של שגיאות OCR בטקסטים עבריים היסטוריים. בכל מערכת כזו, רשימת מילים היא הבסיס:</p>
+<ul>
+<li><strong>סימון מילים חשודות</strong> — כל מילה שאינה במאגר היא מועמדת לבדיקה.</li>
+<li><strong>יצירת מועמדים לתיקון</strong> — המילים הקרובות במרחק עריכה, כמו בבודק איות.</li>
+<li><strong>מדד איכות לעמוד</strong> — עמוד עם אחוז "לא-מילים" גבוה כנראה נסרק רע.</li>
+</ul>
+<p>אותו היגיון חל על <strong>תמלול דיבור לטקסט</strong> (Speech-to-Text): מודלי תמלול עבריים טועים לפעמים במילים נדירות, ורשימת מילים עוזרת לזהות ולתקן בשלב העיבוד המאוחר.</p>
+<hr />
+<h2 id="8-חינוך-ולימוד-עברית">8. חינוך ולימוד עברית</h2>
+<ul>
+<li><strong>אפליקציות לעולים ולומדי עברית</strong> — כרטיסיות, תרגול אוצר מילים, תרגול הטיות. המאגר כולל צורות נטויות, כך שאפשר לבנות תרגולי "השלימו את הצורה".</li>
+<li><strong>קריאה לילדים</strong> — בניית רשימות קריאה מדורגות לפי אורך מילה או לפי סט אותיות שכבר נלמד ("מילים רק עם א, ב, ל, מ").</li>
+<li><strong>כלים לדיסלקציה</strong> — יצירת זוגות מבלבלים לתרגול אותיות דומות (ד/ר, ו/ז, ה/ח, ב/כ, ס/ם): מחליפים אות אחת ובודקים אם התוצאה היא מילה אמיתית.</li>
+<li><strong>לימוד הקלדה עיוורת</strong> — תרגילים מבוססי מילים אמיתיות לכל שורה במקלדת, במקום רצפי אותיות חסרי משמעות.</li>
+<li><strong>חידונים ומשחקים לכיתה</strong> — תפזורות, תשבצים ואיש תלוי שהמורה מייצר בלחיצה.</li>
+</ul>
+<blockquote>
+<p><strong>טיפ:</strong> המאגר המלא גדול מדי ללימוד. ללומדים מתחילים כדאי לשלב אותו עם נתוני שכיחות ולבחור את המילים הנפוצות ביותר.</p>
+</blockquote>
+<hr />
+<h2 id="9-נגישות-ותקשורת-תומכת">9. נגישות ותקשורת תומכת</h2>
+<p><strong>תקשורת תומכת וחלופית (AAC)</strong> משמשת אנשים שמתקשים בדיבור, למשל בעקבות שיתוק מוחין, אוטיזם או ALS. במכשירים ואפליקציות כאלה, <strong>חיזוי מילים</strong> חוסך הקשות — ולאנשים עם מוגבלות מוטורית כל הקשה היא מאמץ. עץ קידומות שנבנה מהמאגר נותן השלמה מיידית בעברית, והרישיון החופשי חשוב במיוחד לגופים ללא מטרות רווח ולפרויקטים קהילתיים.</p>
+<p>גם <strong>קוראי מסך</strong> ומנועי הקראה (Text-to-Speech) מרוויחים מטקסט מאוית נכון — שגיאת כתיב גורמת להקראה משובשת.</p>
+<hr />
+<h2 id="10-אבטחת-מידע-וסיסמאות">10. אבטחת מידע וסיסמאות</h2>
+<ul>
+<li><strong>בדיקת חוזק סיסמה</strong> — ספריות כמו zxcvbn מעריכות חוזק לפי מילונים, אבל לא מגיעות עם מילון עברי. אנשים נוטים להשתמש במילים בעברית — ולעיתים קרובות מקלידים אותן במקלדת אנגלית ("akuo1234" זו בעצם "שלום1234"). <a href="https://github.com/roni5604/hebrew-words-db/blob/main/examples/javascript/password-strength.mjs"><code>password-strength.mjs</code></a> מוסיף את שתי הצורות.</li>
+<li><strong>רשימה שחורה של סיסמאות</strong> — <a href="https://github.com/roni5604/hebrew-words-db/blob/main/examples/python/passphrase.py"><code>passphrase.py --blocklist</code></a> מייצר רשימה עם כל מילה גם בעברית וגם בצורתה במקלדת אנגלית.</li>
+<li><strong>סיסמאות-משפט (Passphrases)</strong> — ארבע מילים אקראיות ("כיסא-ענן-מגדל-שוקולד") קלות לזכירה וחזקות. הדוגמה בוחרת מתוך מאגר של כ-9,000 מילים ונותנת כ-53 ביטים של אנטרופיה, לפי כללי בחירה שהוצעו בעבר לרשימת BIP39 עברית (4–8 אותיות, בלי תחילית, ייחודיות ב-4 האותיות הראשונות).</li>
+<li><strong>בדיקות חדירה</strong> — רשימות מילים בעברית לבדיקת סיסמאות חלשות במערכות של ארגונים ישראליים (בהרשאה בלבד).</li>
+</ul>
+<hr />
+<h2 id="11-תוכן-שיווק-ויצירה">11. תוכן, שיווק ויצירה</h2>
+<ul>
+<li><strong>מחוללי שמות</strong> — שמות למותגים, דומיינים, שמות משתמש ושמות לחיות מחמד, מצירוף מילים קצרות.</li>
+<li><strong>חרוזים</strong> — <a href="https://github.com/roni5604/hebrew-words-db/blob/main/examples/python/rhymes.py"><code>rhymes.py</code></a> מוצא מילים עם סיומת משותפת. מכיוון שעברית בלי ניקוד לא מראה תנועות, זה קירוב — אבל מספיק לכתיבת שירים, ברכות ומשחקי חריזה לילדים.</li>
+<li><strong>ניתוח טקסט</strong> — מדדי קריאות, אורך מילים ממוצע, אחוז מילים לא מוכרות בטקסט שיווקי.</li>
+<li><strong>סינון תוכן</strong> — בסיס לבניית רשימות חסימה שכוללות את כל ההטיות של מילה, לא רק את צורת הבסיס.</li>
+</ul>
+<hr />
+<h2 id="12-ולידציה-של-טפסים-ונתונים">12. ולידציה של טפסים ונתונים</h2>
+<ul>
+<li><strong>זיהוי "קשקוש" בשדות</strong> — שם או כתובת שהם רצף אקראי של אותיות ("דגכדגכ") מסומנים לבדיקה.</li>
+<li><strong>ניקוי נתונים</strong> — זיהוי ערכים בעברית שנשמרו בקידוד שגוי או בפריסת מקלדת שגויה.</li>
+<li><strong>תיוג אוטומטי</strong> — זיהוי האם עמודה במאגר נתונים מכילה טקסט עברי טבעי.</li>
+</ul>
+<hr />
+<h2 id="13-איך-משלבים-בכל-פלטפורמה">13. איך משלבים בכל פלטפורמה</h2>
+<table>
+<thead>
+<tr>
+<th>פלטפורמה</th>
+<th>הדרך המומלצת</th>
+<th>דוגמה</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Python</strong></td>
+<td><code>pip install hebrew-wordlist</code> או קריאת <code>words.txt</code> ל-<code>set</code></td>
+<td><a href="https://github.com/roni5604/hebrew-words-db/blob/main/examples/python/hebrew_words.py"><code>hebrew_words.py</code></a></td>
+</tr>
+<tr>
+<td><strong>JavaScript / Node / React / Next.js</strong></td>
+<td><code>fetch</code> מ-jsDelivr ובניית <code>Set</code>, או <code>npm install hebrew-wordlist</code></td>
+<td><a href="https://github.com/roni5604/hebrew-words-db/blob/main/examples/javascript/hebrew-words.mjs"><code>hebrew-words.mjs</code></a></td>
+</tr>
+<tr>
+<td><strong>Flutter / Dart</strong></td>
+<td><code>words.json</code> כ-asset, טעינה ב-isolate</td>
+<td><a href="https://github.com/roni5604/hebrew-words-db/blob/main/examples/dart/hebrew_words.dart"><code>hebrew_words.dart</code></a></td>
+</tr>
+<tr>
+<td><strong>React Native / Android / iOS</strong></td>
+<td>מסד SQLite מוכן שנארז עם האפליקציה</td>
+<td><a href="https://github.com/roni5604/hebrew-words-db/blob/main/examples/sql/sqlite.py"><code>sqlite.py</code></a></td>
+</tr>
+<tr>
+<td><strong>Unity / C#</strong></td>
+<td><code>words.txt</code> כ-TextAsset → <code>HashSet&lt;string&gt;</code></td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>PostgreSQL</strong></td>
+<td>טבלה + <code>pg_trgm</code> להצעות תיקון</td>
+<td><a href="https://github.com/roni5604/hebrew-words-db/blob/main/examples/sql/postgres.sql"><code>postgres.sql</code></a></td>
+</tr>
+<tr>
+<td><strong>Elasticsearch / OpenSearch</strong></td>
+<td>קובץ מילים ל-filter, הצעות ולולידציה בצד השאילתה</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>מודלי שפה וסוכנים</strong></td>
+<td>הורדה ישירה מ-raw.githubusercontent, תיאור ב-<code>llms.txt</code></td>
+<td><a href="https://github.com/roni5604/hebrew-words-db/blob/main/llms.txt"><code>llms.txt</code></a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>כללי אצבע לכל פלטפורמה:</strong></p>
+<ol>
+<li><strong>טענו פעם אחת</strong>, שמרו ב-<code>Set</code> / <code>HashSet</code> לבדיקה ב-O(1).</li>
+<li><strong>נרמלו קלט</strong> לפני בדיקה: הסרת ניקוד, גרשיים וסימני כיוון.</li>
+<li><strong>קפלו אותיות סופיות רק להשוואה</strong>, לא לתצוגה.</li>
+<li><strong>בדפדפן:</strong> הקובץ שוקל כמגה-בייט וטוען מהר מ-jsDelivr (עם CORS ודחיסה). אם צריך רק חלק, סננו מראש (למשל רק מילים באורך 5 לוורדל).</li>
+<li><strong>באפליקציות מובייל:</strong> עדיף לארוז את הקובץ עם האפליקציה ולא להוריד בכל הפעלה.</li>
+</ol>
+<hr />
+<h2 id="14-שאלות-נפוצות">14. שאלות נפוצות</h2>
+<p><strong>אפשר להשתמש במאגר באפליקציה מסחרית בתשלום?</strong>
+כן. CC0 פירושו נחלת הכלל: אין צורך בקרדיט, באישור או בפתיחת קוד.</p>
+<p><strong>אפשר לאמן עליו מודל AI?</strong>
+כן, בלי הגבלה.</p>
+<p><strong>יש במאגר פירושים, חלקי דיבר או שכיחויות?</strong>
+לא. זה מאגר של "אילו מילים קיימות" בלבד, וזה בכוונה — כך הוא נשאר פשוט, נקי ממגבלות רישיון ונוח לשילוב. אפשר לצרף אליו מקורות אחרים לפי הצורך.</p>
+<p><strong>חסרה לי מילה. מה עושים?</strong>
+פתחו <a href="https://github.com/roni5604/hebrew-words-db/issues/new?template=missing-words.yml">issue</a> עם המילים, או שלחו Pull Request — ההוראות ב-<a href="https://github.com/roni5604/hebrew-words-db/blob/main/CONTRIBUTING.md"><code>CONTRIBUTING.md</code></a>.</p>
+<p><strong>בניתי משהו עם המאגר. איך מספרים?</strong>
+שלחו PR שמוסיף את הפרויקט שלכם לסעיף "Used by" ב-README. זה עוזר לאחרים למצוא אתכם ואת המאגר.</p>
+<hr />
+<p><sub>מדריך זה מתוחזק כחלק מ-<a href="https://github.com/roni5604/hebrew-words-db">hebrew-words-db</a>. התוכן ברישיון CC0.</sub></p>
+<div class="cta">⬇️ <b>להורדת המאגר:</b> <a href="https://raw.githubusercontent.com/roni5604/hebrew-words-db/main/data/words.txt">words.txt</a> · <a href="https://raw.githubusercontent.com/roni5604/hebrew-words-db/main/data/words.json">words.json</a> · <a href="https://raw.githubusercontent.com/roni5604/hebrew-words-db/main/data/words.csv">words.csv</a> — או <a href="./">נסו את בודק המילים</a> · <a href="https://github.com/roni5604/hebrew-words-db">⭐ GitHub</a></div>
+<footer>Data: CC0 1.0 · Code: MIT · <a href="https://ronimichaeli.com/">Roni Michaeli · רוני מיכאלי</a> · 2026-10-13</footer>
+</main>
+</body>
+</html>

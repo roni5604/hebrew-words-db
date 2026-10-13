@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://roni5604.github.io/hebrew-words-db/sitemap.xml

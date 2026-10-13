@@ -40,3 +40,16 @@ jobs:
           assert stats["total_words"] == len(words)
           print(f"OK: {len(words)} words")
           EOF
+
+      - name: Smoke-test examples
+        working-directory: examples/python
+        run: |
+          python3 spellcheck.py "שלומ עולמ"
+          python3 wordle.py --lists && rm guesses.txt answers.txt
+          python3 anagrams.py שלום
+          python3 boggle.py
+          test "$(python3 wrong_layout.py 'akuo nv akunl')" = "שלום מה שלומך"
+          python3 passphrase.py
+          echo "שלום עולם" | python3 llm_quality.py -
+          python3 rhymes.py אהבה
+          python3 ../sql/sqlite.py /tmp/hw.db

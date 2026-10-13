@@ -66,6 +66,8 @@
   <p>רשימת המילים העברית החופשית הגדולה ב-GitHub — <b class="count" id="count">67,000+</b> מילים, כולל רבים, הטיות פעלים ותארים. בלי ניקוד, בלי פירושים, בלי הגבלות רישיון.</p>
   <p class="en">The largest free, public-domain list of Hebrew words. Free for any use — apps, games, spellcheckers, LLM training.</p>
 
+  <p><a href="use-cases.html"><b>📖 מה אפשר לבנות עם המאגר?</b></a> משחקי מילים, בדיקת איות, חיפוש באתרים, AI, OCR, חינוך, נגישות ואבטחה · <a href="en/use-cases.html" lang="en">Use-case guide (English)</a></p>
+
   <div class="card">
     <h2>בדיקת מילה</h2>
     <input id="q" placeholder="הקלידו מילה, למשל: מחשב" autocomplete="off" aria-label="Hebrew word">
@@ -105,6 +107,19 @@ const words = await fetch("https://cdn.jsdelivr.net/gh/roni5604/hebrew-words-db@
 # Python
 import urllib.request
 words = urllib.request.urlopen("https://raw.githubusercontent.com/roni5604/hebrew-words-db/main/data/words.txt").read().decode().split()</pre>
+  </div>
+
+  <div class="card">
+    <h2>למה משתמשים במאגר?</h2>
+    <div class="row" style="font-size:15px">
+      <div>🎮 <b>משחקים</b><br>וורדל, בוגל, שבץ-נא, תשבצים, אנגרמות</div>
+      <div>✍️ <b>כתיבה</b><br>בדיקת איות, השלמה אוטומטית, מקלדות</div>
+      <div>🔎 <b>חיפוש</b><br>"האם התכוונת", תיקון שפת מקלדת</div>
+      <div>🤖 <b>AI</b><br>בדיקת פלט מודלים, טוקנייזרים, סינון נתונים</div>
+      <div>📚 <b>חינוך</b><br>לימוד עברית, קריאה, דיסלקציה</div>
+      <div>🔐 <b>אבטחה</b><br>חוזק סיסמאות, סיסמאות-משפט</div>
+    </div>
+    <p><a href="use-cases.html">למדריך המלא עם קוד לדוגמה ←</a></p>
   </div>
 
   <footer>

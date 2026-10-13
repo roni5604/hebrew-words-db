@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What you can build with a Hebrew word list — use-case guide</title>
+<meta name="description" content="Complete guide to using a free CC0 Hebrew word list: word games, spellcheck, site search, LLMs & NLP, OCR, education, accessibility and security — with runnable code.">
+<link rel="canonical" href="https://roni5604.github.io/hebrew-words-db/en/use-cases.html">
+<link rel="alternate" hreflang="he" href="https://roni5604.github.io/hebrew-words-db/use-cases.html">
+<link rel="alternate" hreflang="en" href="https://roni5604.github.io/hebrew-words-db/en/use-cases.html">
+<meta property="og:title" content="What you can build with a Hebrew word list — use-case guide">
+<meta property="og:description" content="Complete guide to using a free CC0 Hebrew word list: word games, spellcheck, site search, LLMs & NLP, OCR, education, accessibility and security — with runnable code.">
+<meta property="og:url" content="https://roni5604.github.io/hebrew-words-db/en/use-cases.html">
+<meta property="og:image" content="https://roni5604.github.io/hebrew-words-db/social-preview.png">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"TechArticle","headline":"What you can build with a Hebrew word list — use-case guide","description":"Complete guide to using a free CC0 Hebrew word list: word games, spellcheck, site search, LLMs & NLP, OCR, education, accessibility and security — with runnable code.","inLanguage":"en","url":"https://roni5604.github.io/hebrew-words-db/en/use-cases.html","dateModified":"2026-10-13","author":{"@type":"Person","name":"Roni Michaeli","url":"https://ronimichaeli.com/"},"about":{"@type":"Dataset","name":"hebrew-words-db","url":"https://github.com/roni5604/hebrew-words-db","license":"https://creativecommons.org/publicdomain/zero/1.0/"}}
+</script>
+<style>
+  :root { --bg:#f7f8fb; --card:#fff; --ink:#14182b; --muted:#5d6480; --line:#e2e5ee; --accent:#0038b8; --code:#eef1f8; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#0f1220; --card:#181c2e; --ink:#eef0f8; --muted:#a2a8c3; --line:#2a2f47; --accent:#7aa2ff; --code:#11152a; } }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:17px/1.75 system-ui, -apple-system, "Segoe UI", Arial, sans-serif; }
+  nav { position:sticky; top:0; background:var(--card); border-bottom:1px solid var(--line); z-index:1; }
+  nav div { max-width:860px; margin:0 auto; padding:10px 16px; display:flex; gap:18px; flex-wrap:wrap; font-size:15px; }
+  main { max-width:860px; margin:0 auto; padding:24px 16px 64px; }
+  h1 { font-size:clamp(26px,5vw,38px); line-height:1.25; }
+  h2 { margin-top:48px; padding-top:12px; border-top:1px solid var(--line); }
+  h3 { margin-top:28px; }
+  a { color:var(--accent); }
+  code { background:var(--code); padding:1px 5px; border-radius:5px; font-size:.88em; }
+  pre { direction:ltr; text-align:left; background:var(--code); border:1px solid var(--line); border-radius:10px; padding:12px; overflow-x:auto; }
+  pre code { background:none; padding:0; }
+  table { border-collapse:collapse; width:100%; display:block; overflow-x:auto; font-size:15px; }
+  th, td { border:1px solid var(--line); padding:8px 10px; text-align:start; vertical-align:top; }
+  th { background:var(--code); }
+  blockquote { margin:16px 0; padding:8px 16px; border-inline-start:4px solid var(--accent); background:var(--card); border-radius:6px; }
+  .cta { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:16px 20px; margin:32px 0; }
+  footer { color:var(--muted); font-size:14px; margin-top:40px; }
+</style>
+</head>
+<body>
+<nav><div><a href="../">Home</a> <a href="use-cases.html">Use cases</a> <a href="../use-cases.html">עברית</a> <a href="https://github.com/roni5604/hebrew-words-db">GitHub</a></div></nav>
+<main>
+<h1 id="what-you-can-build-with-a-hebrew-word-list-the-complete-use-case-guide">What you can build with a Hebrew word list — the complete use-case guide</h1>
+<blockquote>
+<p><strong>עברית:</strong> <a href="../use-cases.html">USE_CASES.md</a></p>
+</blockquote>
+<p>A word list is one of the basic building blocks of any product that handles language. For Hebrew the need is sharper than usual: the language is morphologically rich (clitic prefixes, suffixes, inflection), written without vowels, and has final letter forms — so every app, site or model that touches Hebrew text eventually needs to answer a simple question: <strong>"Is this a Hebrew word?"</strong></p>
+<p>Until now the answer came with legal strings attached. The large existing Hebrew word lists are either AGPL (Hspell and everything derived from it — forcing you to open-source your product) or non-commercial only. <strong>hebrew-words-db</strong> is a list of tens of thousands of Hebrew words, inflected forms included, released under <strong>CC0</strong> (public domain). Ship it in anything — commercial, closed-source, model training — without permission or attribution.</p>
+<p>This guide covers every major use case, explains the Hebrew-specific pitfalls, and links to runnable code in <a href="https://github.com/roni5604/hebrew-words-db/blob/main/examples/"><code>examples/</code></a>.</p>
+<hr />
+<h2 id="contents">Contents</h2>
+<ol>
+<li><a href="#1-hebrew-pitfalls-every-developer-should-know">Hebrew pitfalls every developer should know</a></li>
+<li><a href="#2-word-games">Word games</a></li>
+<li><a href="#3-spellcheck-autocomplete-and-keyboards">Spellcheck, autocomplete and keyboards</a></li>
+<li><a href="#4-site-search-and-e-commerce">Site search and e-commerce</a></li>
+<li><a href="#5-fixing-wrong-keyboard-layout-text">Fixing wrong-keyboard-layout text</a></li>
+<li><a href="#6-ai-llms-and-nlp">AI, LLMs and NLP</a></li>
+<li><a href="#7-ocr-transcription-and-digitization">OCR, transcription and digitization</a></li>
+<li><a href="#8-education-and-hebrew-learning">Education and Hebrew learning</a></li>
+<li><a href="#9-accessibility-and-aac">Accessibility and AAC</a></li>
+<li><a href="#10-security-and-passwords">Security and passwords</a></li>
+<li><a href="#11-content-marketing-and-creative-tools">Content, marketing and creative tools</a></li>
+<li><a href="#12-form-and-data-validation">Form and data validation</a></li>
+<li><a href="#13-integration-by-platform">Integration by platform</a></li>
+<li><a href="#14-faq">FAQ</a></li>
+</ol>
+<hr />
+<h2 id="1-hebrew-pitfalls-every-developer-should-know">1. Hebrew pitfalls every developer should know</h2>
+<p>Almost every Hebrew text bug comes from one of these five things.</p>
+<p><strong>Final letters (ך ם ן ף ץ).</strong> This list stores words in correct spelling, with the final form at the end. But many products need ם to equal מ: the keyboard of a Wordle game, Scrabble tiles (the official Hebrew set has no separate final-letter tiles at all), edit-distance calculations for typo correction. The standard fix is to <strong>fold final letters to their regular form for matching only</strong>, and restore them for display. See <code>fold_finals</code> / <code>unfold_finals</code> in <a href="https://github.com/roni5604/hebrew-words-db/blob/main/examples/python/hebrew_words.py"><code>examples/python/hebrew_words.py</code></a>.</p>
+<p><strong>Clitic prefixes (ו ה ב כ ל מ ש).</strong> Hebrew attaches "and", "the", "in", "like", "to", "from" and "that" directly to words: ומהבית is ו+מ+ה+בית ("and from the house"). No list holds every combination, so a correct check peels up to three prefixes and tests the remainder. The list already includes suffixes and inflections (plurals, persons, tenses), so prefix peeling closes most of the gap.</p>
+<p><strong>Niqqud and cantillation.</strong> Text from the Bible, children's books or automatic vocalizers contains marks in U+0591–U+05C7. Strip them before lookup — the list has no niqqud.</p>
+<p><strong>Full vs. defective spelling.</strong> The same word is often written two ways (תוכנית / תכנית, אמא / אימא). The Academy of the Hebrew Language prefers one form, but people write both. A spellchecker that only knows one form flags perfectly normal text, so accept both when both are in the list.</p>
+<p><strong>Geresh, gershayim and direction marks.</strong> Loanwords (ג'וק), acronyms (צה"ל) and invisible direction marks (LRM/RLM) break string comparisons. This list stores loanwords without the geresh (ג'וק → גוק), so strip geresh, gershayim and quotes before checking.</p>
+<hr />
+<h2 id="2-word-games">2. Word games</h2>
+<p>Word games are the most common use for a word list, and the area where Hebrew raises the most interesting problems.</p>
+<h3 id="hebrew-wordle">Hebrew Wordle</h3>
+<p>Several popular Hebrew Wordle clones appeared after Wordle went viral and were covered by Israeli media. Their makers hit the same issues you will:</p>
+<ul>
+<li><strong>Final letters on the keyboard.</strong> At least one developer said he removed the final forms because they confused players, cutting the keyboard from 27 keys to 22. Compare folded letters.</li>
+<li><strong>Prefixed words.</strong> "והבית" ("and the house") is a fair guess but feels unfair as the daily answer. The fix: <strong>accept any 5-letter word as a guess, but draw answers only from words without a prefix letter.</strong></li>
+</ul>
+<p><a href="https://github.com/roni5604/hebrew-words-db/blob/main/examples/python/wordle.py"><code>examples/python/wordle.py</code></a> implements it all: ~15,700 valid guesses, ~10,600 answers, correct coloring (including repeated letters) and a terminal game.</p>
+<h3 id="boggle-and-grid-games">Boggle and grid games</h3>
+<p>Boggle needs every word formed by a path of adjacent tiles. The right structure is a <strong>prefix trie</strong>: build it once, then a depth-first search over the board stops the moment a prefix doesn't exist. <a href="https://github.com/roni5604/hebrew-words-db/blob/main/examples/python/boggle.py"><code>boggle.py</code></a> solves a 4×4 board in a fraction of a second. This list is used in production for word validation in <strong>WordboxGame ("מצא ת׳מילה")</strong>, a Hebrew Boggle-style game built with Flutter.</p>
+<h3 id="scrabble-and-anagrams">Scrabble and anagrams</h3>
+<p>Hebrew Scrabble has 100 tiles and no final-letter tiles, so fold here too. For anagrams, <strong>sort a word's letters and use the result as a key</strong>; all words sharing a key are anagrams. <a href="https://github.com/roni5604/hebrew-words-db/blob/main/examples/python/anagrams.py"><code>anagrams.py</code></a> finds anagrams (שלום → מושל, שולם…) and every word you can build from a set of tiles.</p>
+<h3 id="crosswords-hangman-word-search-semantle">Crosswords, hangman, word search, Semantle</h3>
+<ul>
+<li><strong>Crossword generators</strong> need words by length and letters at given positions. The pattern search on the demo site (e.g. <code>מ??ב</code>) is exactly that query.</li>
+<li><strong>Hangman and word search</strong> need "clean" words of a given length — filter by length and drop words starting with a prefix letter.</li>
+<li><strong>Semantle-style games</strong> use a word-vector model; a list of valid words filters the model's vocabulary of junk, typos and non-words.</li>
+</ul>
+<hr />
+<h2 id="3-spellcheck-autocomplete-and-keyboards">3. Spellcheck, autocomplete and keyboards</h2>
+<h3 id="spellchecker">Spellchecker</h3>
+<p>A basic spellchecker flags non-words and suggests the closest real ones. For Hebrew, add three things:</p>
+<ol>
+<li><strong>Prefix peeling</strong> — ובספרים is not an error.</li>
+<li><strong>Final-letter tolerance</strong> — שלומ corrects straight to שלום, since the folded keys match.</li>
+<li><strong>Hebrew-only edit distance</strong> — substitute only the 22 Hebrew letters, which keeps the candidate space small.</li>
+</ol>
+<p><a href="https://github.com/roni5604/hebrew-words-db/blob/main/examples/python/spellcheck.py"><code>spellcheck.py</code></a> does all three in ~50 lines. For large systems pair the list with a fast algorithm such as SymSpell; ranking suggestions by popularity needs frequency data, which this list doesn't include.</p>
+<h3 id="autocomplete">Autocomplete</h3>
+<p>The list is sorted, so <strong>autocomplete is a binary search</strong>: find the first entry with the prefix and read forward. It's fast enough to run in the browser on every keystroke. <a href="https://github.com/roni5604/hebrew-words-db/blob/main/examples/javascript/autocomplete.html"><code>autocomplete.html</code></a> is a single file with autocomplete, error underlining and layout fixing.</p>
+<h3 id="keyboards-and-word-prediction">Keyboards and word prediction</h3>
+<p>Virtual keyboards (including open-source Android keyboards) need a dictionary for prediction and auto-correct. CC0 means you can embed this list in a commercial keyboard with no legal review.</p>
+<hr />
+<h2 id="4-site-search-and-e-commerce">4. Site search and e-commerce</h2>
+<p>Hebrew search is a well-known pain point for Israeli online stores: a shopper types "נעלי ריצה לנשים" (women's running shoes) and an exact-match engine misses "נעל ריצה". Part of the problem is that popular search engines don't ship Hebrew analysis — Elasticsearch, for example, has no Hebrew analyzer in its built-in language analyzers, and the established plugin (HebMorph, built on Hspell data) is AGPL.</p>
+<p>Where a free word list helps:</p>
+<ul>
+<li><strong>"Did you mean…"</strong> — when a query returns nothing, suggest the nearest words.</li>
+<li><strong>Controlled prefix peeling</strong> — לבית also searches בית, but only if בית is really in the list. This avoids over-stripping: לימון starts with ל, but it's already a word, so it is never stripped to "ימון".</li>
+<li><strong>Search-box autocomplete</strong> — combine suggestions from the list and from your catalog.</li>
+<li><strong>Wrong-layout detection</strong> — a search for "bgkh rhmv" becomes "נעלי ריצה" automatically (section 5).</li>
+</ul>
+<p>In PostgreSQL one table with a trigram index gives fast "did you mean": <a href="https://github.com/roni5604/hebrew-words-db/blob/main/examples/sql/postgres.sql"><code>examples/sql/postgres.sql</code></a>.</p>
+<hr />
+<h2 id="5-fixing-wrong-keyboard-layout-text">5. Fixing wrong-keyboard-layout text</h2>
+<p>Every Israeli knows this one: you type a whole sentence and discover the keyboard was set to English — "akuo" instead of "שלום". Whole tools exist just to fix it: desktop apps, Chrome extensions and more.</p>
+<p>The conversion itself is easy (a 31-character table for the standard Israeli layout). <strong>The hard part is deciding when to convert</strong> — you must not turn the English word "exit" into Hebrew. The word list decides: convert, and accept the result only if most resulting tokens are real Hebrew words. <a href="https://github.com/roni5604/hebrew-words-db/blob/main/examples/python/wrong_layout.py"><code>wrong_layout.py</code></a> turns <code>akuo nv akunl</code> into <code>שלום מה שלומך</code> while leaving <code>hello world</code> untouched.</p>
+<p>Use it in search boxes, chat and messaging apps, form fields, browser extensions and keyboards.</p>
+<hr />
+<h2 id="6-ai-llms-and-nlp">6. AI, LLMs and NLP</h2>
+<h3 id="hebrews-token-tax">Hebrew's token tax</h3>
+<p>LLMs split text into tokens, and most tokenizers were built mainly for English, so Hebrew costs more. According to the DictaLM 2.0 paper, Mistral's original tokenizer used about 5.8 tokens per Hebrew word — nearly one per letter — and adding roughly a thousand Hebrew tokens more than halved that ratio. A word list lets you:</p>
+<ul>
+<li><strong>Measure fertility</strong> — tokens per Hebrew word for any tokenizer — and compare models: <code>llm_quality.py --tokenizer &lt;model&gt;</code>.</li>
+<li><strong>Choose tokens for vocabulary extension</strong> when training or fine-tuning for Hebrew.</li>
+</ul>
+<h3 id="detecting-made-up-words-in-model-output">Detecting made-up words in model output</h3>
+<p>Models, especially small ones, sometimes produce Hebrew "words" that don't exist. A cheap metric: <strong>the share of output tokens not in the list</strong> (after prefix peeling). A spike flags garbled output. <a href="https://github.com/roni5604/hebrew-words-db/blob/main/examples/python/llm_quality.py"><code>llm_quality.py</code></a> computes it for any text.</p>
+<h3 id="filtering-training-and-synthetic-data">Filtering training and synthetic data</h3>
+<p>When generating training data with models or cleaning a web-scraped corpus, drop sentences with a high non-word rate. The same signal helps <strong>language identification</strong> — telling Hebrew apart from Yiddish or Ladino, which use the same script.</p>
+<h3 id="more-nlp-uses">More NLP uses</h3>
+<ul>
+<li><strong>Coverage tests</strong> — how much of the vocabulary a model or system knows.</li>
+<li><strong>Consonant-skeleton checks</strong> for automatic vocalizer output, after stripping niqqud.</li>
+<li><strong>A seed for lexicons</strong> — a starting point for building tagged dictionaries.</li>
+</ul>
+<p><strong>And for LLMs themselves:</strong> a model asked "where can I get a Hebrew word list for a commercial project?" should know a resource that is actually allowed. That's what <a href="https://github.com/roni5604/hebrew-words-db/blob/main/llms.txt"><code>llms.txt</code></a> at the repo root is for.</p>
+<hr />
+<h2 id="7-ocr-transcription-and-digitization">7. OCR, transcription and digitization</h2>
+<p>OCR of Hebrew — especially historical newspapers and manuscripts — produces many errors, and Israeli academic research specifically targets automatic OCR correction for historical Hebrew. In every such system a word list is the foundation:</p>
+<ul>
+<li><strong>Flag suspicious tokens</strong> — anything not in the list is a candidate for review.</li>
+<li><strong>Generate correction candidates</strong> — nearby words by edit distance, as in a spellchecker.</li>
+<li><strong>Score page quality</strong> — a page with a high non-word rate was probably scanned badly.</li>
+</ul>
+<p>The same applies to <strong>speech-to-text</strong>: Hebrew transcription models sometimes miss rare words, and a word list helps detect and correct them in post-processing.</p>
+<hr />
+<h2 id="8-education-and-hebrew-learning">8. Education and Hebrew learning</h2>
+<ul>
+<li><strong>Apps for new immigrants and learners</strong> — flashcards, vocabulary drills, inflection practice. Because the list includes inflected forms you can build "complete the form" exercises.</li>
+<li><strong>Reading for kids</strong> — graded reading lists by word length or by the set of letters already learned ("words using only א, ב, ל, מ").</li>
+<li><strong>Dyslexia tools</strong> — minimal pairs for look-alike letters (ד/ר, ו/ז, ה/ח, ב/כ, ס/ם): swap one letter and check whether the result is a real word.</li>
+<li><strong>Touch-typing tutors</strong> — real-word drills for each keyboard row instead of meaningless letter strings.</li>
+<li><strong>Classroom games</strong> — word searches, crosswords and hangman generated in one click.</li>
+</ul>
+<blockquote>
+<p><strong>Tip:</strong> the full list is too big for teaching. For beginners, combine it with frequency data and choose the most common words.</p>
+</blockquote>
+<hr />
+<h2 id="9-accessibility-and-aac">9. Accessibility and AAC</h2>
+<p><strong>Augmentative and alternative communication (AAC)</strong> serves people who have difficulty speaking — for example due to cerebral palsy, autism or ALS. In AAC devices and apps, <strong>word prediction</strong> saves keystrokes, and for people with motor disabilities every keystroke is effort. A trie built from the list gives instant Hebrew completion, and the free license matters especially for nonprofits and community projects.</p>
+<p><strong>Screen readers</strong> and text-to-speech engines also benefit from correctly spelled text — a typo leads to garbled speech.</p>
+<hr />
+<h2 id="10-security-and-passwords">10. Security and passwords</h2>
+<ul>
+<li><strong>Password strength meters</strong> — libraries such as zxcvbn rate passwords against dictionaries but ship without a Hebrew one. People use Hebrew words, often typed on the English layout ("akuo1234" is really "שלום1234"). <a href="https://github.com/roni5604/hebrew-words-db/blob/main/examples/javascript/password-strength.mjs"><code>password-strength.mjs</code></a> adds both forms.</li>
+<li><strong>Password blocklists</strong> — <a href="https://github.com/roni5604/hebrew-words-db/blob/main/examples/python/passphrase.py"><code>passphrase.py --blocklist</code></a> writes each word in Hebrew and in its English-keyboard form.</li>
+<li><strong>Passphrases</strong> — four random words ("כיסא-ענן-מגדל-שוקולד") are memorable and strong. The example draws from a pool of ~9,000 words for ~53 bits of entropy, using selection rules once proposed for a Hebrew BIP39 list (4–8 letters, no prefix letter, unique first four letters).</li>
+<li><strong>Penetration testing</strong> — Hebrew wordlists for auditing weak passwords in Israeli organizations' systems (with authorization only).</li>
+</ul>
+<hr />
+<h2 id="11-content-marketing-and-creative-tools">11. Content, marketing and creative tools</h2>
+<ul>
+<li><strong>Name generators</strong> — brands, domains, usernames and pet names from short word combinations.</li>
+<li><strong>Rhymes</strong> — <a href="https://github.com/roni5604/hebrew-words-db/blob/main/examples/python/rhymes.py"><code>rhymes.py</code></a> finds words with a shared ending. Unvocalized Hebrew doesn't show vowels, so it's approximate, but good enough for songwriting, greetings and kids' rhyming games.</li>
+<li><strong>Text analytics</strong> — readability metrics, average word length, unknown-word rate in marketing copy.</li>
+<li><strong>Content moderation</strong> — a base for blocklists that cover every inflection of a word, not just the base form.</li>
+</ul>
+<hr />
+<h2 id="12-form-and-data-validation">12. Form and data validation</h2>
+<ul>
+<li><strong>Gibberish detection</strong> — a name or address that's a random letter string ("דגכדגכ") gets flagged.</li>
+<li><strong>Data cleaning</strong> — spot Hebrew values saved in the wrong encoding or wrong keyboard layout.</li>
+<li><strong>Auto-tagging</strong> — detect whether a database column contains natural Hebrew text.</li>
+</ul>
+<hr />
+<h2 id="13-integration-by-platform">13. Integration by platform</h2>
+<table>
+<thead>
+<tr>
+<th>Platform</th>
+<th>Recommended approach</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Python</strong></td>
+<td><code>pip install hebrew-wordlist</code>, or read <code>words.txt</code> into a <code>set</code></td>
+<td><a href="https://github.com/roni5604/hebrew-words-db/blob/main/examples/python/hebrew_words.py"><code>hebrew_words.py</code></a></td>
+</tr>
+<tr>
+<td><strong>JavaScript / Node / React / Next.js</strong></td>
+<td><code>fetch</code> from jsDelivr into a <code>Set</code>, or <code>npm install hebrew-wordlist</code></td>
+<td><a href="https://github.com/roni5604/hebrew-words-db/blob/main/examples/javascript/hebrew-words.mjs"><code>hebrew-words.mjs</code></a></td>
+</tr>
+<tr>
+<td><strong>Flutter / Dart</strong></td>
+<td><code>words.json</code> as an asset, decoded in an isolate</td>
+<td><a href="https://github.com/roni5604/hebrew-words-db/blob/main/examples/dart/hebrew_words.dart"><code>hebrew_words.dart</code></a></td>
+</tr>
+<tr>
+<td><strong>React Native / Android / iOS</strong></td>
+<td>Prebuilt SQLite DB bundled with the app</td>
+<td><a href="https://github.com/roni5604/hebrew-words-db/blob/main/examples/sql/sqlite.py"><code>sqlite.py</code></a></td>
+</tr>
+<tr>
+<td><strong>Unity / C#</strong></td>
+<td><code>words.txt</code> as a TextAsset → <code>HashSet&lt;string&gt;</code></td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>PostgreSQL</strong></td>
+<td>Table + <code>pg_trgm</code> for suggestions</td>
+<td><a href="https://github.com/roni5604/hebrew-words-db/blob/main/examples/sql/postgres.sql"><code>postgres.sql</code></a></td>
+</tr>
+<tr>
+<td><strong>Elasticsearch / OpenSearch</strong></td>
+<td>Word file for filters, query-side suggestions and validation</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>LLMs and agents</strong></td>
+<td>Direct download from raw.githubusercontent, described in <code>llms.txt</code></td>
+<td><a href="https://github.com/roni5604/hebrew-words-db/blob/main/llms.txt"><code>llms.txt</code></a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Rules of thumb:</strong></p>
+<ol>
+<li><strong>Load once</strong> into a <code>Set</code> / <code>HashSet</code> for O(1) lookups.</li>
+<li><strong>Normalize input</strong> before checking: strip niqqud, gershayim and direction marks.</li>
+<li><strong>Fold final letters only for matching</strong>, never for display.</li>
+<li><strong>In the browser</strong> the file is about a megabyte and loads fast from jsDelivr (CORS, compression). If you need a subset, pre-filter it (e.g. only 5-letter words for Wordle).</li>
+<li><strong>In mobile apps</strong> bundle the file with the app rather than downloading it at every launch.</li>
+</ol>
+<hr />
+<h2 id="14-faq">14. FAQ</h2>
+<p><strong>Can I use it in a paid commercial app?</strong> Yes. CC0 is public domain: no credit, permission or open-sourcing required.</p>
+<p><strong>Can I train an AI model on it?</strong> Yes, without restriction.</p>
+<p><strong>Does it include definitions, parts of speech or frequencies?</strong> No. It's a <em>which-words-exist</em> list, on purpose — that keeps it simple, license-clean and easy to integrate. Combine it with other sources as needed.</p>
+<p><strong>A word is missing. What do I do?</strong> Open an <a href="https://github.com/roni5604/hebrew-words-db/issues/new?template=missing-words.yml">issue</a> with the words, or send a pull request — see <a href="https://github.com/roni5604/hebrew-words-db/blob/main/CONTRIBUTING.md"><code>CONTRIBUTING.md</code></a>.</p>
+<p><strong>I built something with it. How do I tell people?</strong> Send a PR adding your project to the "Used by" section of the README. It helps others find you and the dataset.</p>
+<hr />
+<p><sub>This guide is maintained as part of <a href="https://github.com/roni5604/hebrew-words-db">hebrew-words-db</a>. Content is CC0.</sub></p>
+<div class="cta">⬇️ <b>Get the list:</b> <a href="https://raw.githubusercontent.com/roni5604/hebrew-words-db/main/data/words.txt">words.txt</a> · <a href="https://raw.githubusercontent.com/roni5604/hebrew-words-db/main/data/words.json">words.json</a> · <a href="https://raw.githubusercontent.com/roni5604/hebrew-words-db/main/data/words.csv">words.csv</a> — or <a href="../">try the word checker</a> · <a href="https://github.com/roni5604/hebrew-words-db">⭐ GitHub</a></div>
+<footer>Data: CC0 1.0 · Code: MIT · <a href="https://ronimichaeli.com/">Roni Michaeli · רוני מיכאלי</a> · 2026-10-13</footer>
+</main>
+</body>
+</html>

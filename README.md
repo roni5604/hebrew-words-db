@@ -96,11 +96,23 @@ What you get:
 
 ## Use cases / שימושים
 
-- 🎮 **Word games** — Wordle / Boggle / Scrabble / crossword / anagram games in Hebrew (וורדל בעברית, תשבצים, אנגרמות)
-- ✍️ **Spellcheck & autocomplete** — dictionary lookup, typo detection, keyboard prediction
-- 🤖 **NLP & LLMs** — vocabulary coverage tests, tokenizer analysis, synthetic data, evaluation of Hebrew generation, filtering non-words
-- 🔐 **Security** — Hebrew-aware password strength checks and wordlists
-- 📚 **Education** — vocabulary drills, flashcards, reading apps
+📖 **Full guide with Hebrew-specific pitfalls and code:** [מדריך שימושים בעברית](docs/USE_CASES.md) · [Use-case guide in English](docs/USE_CASES.en.md) · [on the web](https://roni5604.github.io/hebrew-words-db/use-cases.html)
+
+| | Use case | Ready-to-run example |
+|---|---|---|
+| 🎮 | **Word games** — Hebrew Wordle, Boggle, Scrabble, crosswords, anagrams, hangman (וורדל, בוגל, שבץ-נא, תשבצים) | [`wordle.py`](examples/python/wordle.py) · [`boggle.py`](examples/python/boggle.py) · [`anagrams.py`](examples/python/anagrams.py) |
+| ✍️ | **Spellcheck & autocomplete** — typo detection with "did you mean", prefix-aware (ו/ה/ב/ל…), keyboard prediction | [`spellcheck.py`](examples/python/spellcheck.py) · [`autocomplete.html`](examples/javascript/autocomplete.html) |
+| 🔎 | **Site search & e-commerce** — query suggestions, controlled prefix stripping, Postgres trigram search | [`postgres.sql`](examples/sql/postgres.sql) |
+| ⌨️ | **Wrong keyboard layout fix** — `akuo nv akunl` → `שלום מה שלומך`, for search boxes, chats and forms | [`wrong_layout.py`](examples/python/wrong_layout.py) |
+| 🤖 | **AI / LLMs / NLP** — non-word rate of model output, tokenizer fertility, training-data filtering, language ID | [`llm_quality.py`](examples/python/llm_quality.py) |
+| 📄 | **OCR & speech-to-text** — flag and correct misrecognized Hebrew words | [`llm_quality.py`](examples/python/llm_quality.py) · [`spellcheck.py`](examples/python/spellcheck.py) |
+| 📚 | **Education** — learner drills, graded reading lists, dyslexia minimal pairs, typing tutors | [guide](docs/USE_CASES.en.md#8-education-and-hebrew-learning) |
+| ♿ | **Accessibility / AAC** — word prediction for people with speech or motor disabilities | [guide](docs/USE_CASES.en.md#9-accessibility-and-aac) |
+| 🔐 | **Security** — Hebrew passphrases, password blocklists incl. English-keyboard forms, zxcvbn dictionaries | [`passphrase.py`](examples/python/passphrase.py) · [`password-strength.mjs`](examples/javascript/password-strength.mjs) |
+| ✨ | **Content & creative** — rhymes (חרוזים), name generators, text analytics, moderation lists | [`rhymes.py`](examples/python/rhymes.py) |
+| 📱 | **Mobile & desktop apps** — offline SQLite DB, Flutter asset loader | [`sqlite.py`](examples/sql/sqlite.py) · [`hebrew_words.dart`](examples/dart/hebrew_words.dart) |
+
+All examples: [`examples/`](examples/) — Python examples use the standard library only.
 
 ## Dataset format / פורמט
 
@@ -125,6 +137,7 @@ data/                       ← the dataset (generated – don't edit by hand)
   by_letter/<א-ת>.txt       the list split by first letter
 raw/*_raw.txt               source batches – add new words here
 scripts/build.py            rebuilds data/ from raw/ (stdlib only)
+examples/                   runnable code: games, spellcheck, search, AI, security
 packages/python, packages/npm   package wrappers (published from releases)
 hf/README.md                Hugging Face dataset card
 docs/                       methodology, distribution plan, GitHub Pages demo

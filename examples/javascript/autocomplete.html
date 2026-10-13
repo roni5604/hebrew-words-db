@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hebrew autocomplete demo</title>
+<style>
+  body { font: 18px/1.5 system-ui, sans-serif; max-width: 480px; margin: 40px auto; padding: 0 16px; }
+  input { width: 100%; font: inherit; padding: 10px; box-sizing: border-box; }
+  ul { list-style: none; padding: 0; margin: 4px 0; border: 1px solid #ccc; border-radius: 6px; }
+  li { padding: 6px 10px; cursor: pointer; } li:hover { background: #eef; }
+  .bad { text-decoration: underline wavy red; }
+</style>
+</head>
+<body>
+  <h1>השלמה אוטומטית</h1>
+  <!-- Copy this file anywhere and open it: autocomplete + wrong-layout fix + spellcheck. -->
+  <input id="q" placeholder="התחילו להקליד… (או akuo)" autocomplete="off">
+  <ul id="list" hidden></ul>
+  <p id="note"></p>
+<script type="module">
+  import { loadWords, autocomplete, fixLayout, isWord } from
+    "https://cdn.jsdelivr.net/gh/roni5604/hebrew-words-db@main/examples/javascript/hebrew-words.mjs";
+  await loadWords();
+  const q = document.getElementById("q"), list = document.getElementById("list"), note = document.getElementById("note");
+  q.addEventListener("input", () => {
+    const value = q.value.trim();
+    const last = value.split(/\s+/).pop() || "";
+    const fixed = /[a-z]/i.test(value) ? fixLayout(value) : null;
+    note.textContent = fixed ? `התכוונתם ל: ${fixed}?` : "";
+    const items = last ? autocomplete(last, 8) : [];
+    list.hidden = !items.length;
+    list.innerHTML = items.map((w) => `<li>${w}</li>`).join("");
+    q.classList.toggle("bad", !!last && !/[a-z]/i.test(last) && !items.length && !isWord(last));
+  });
+  list.addEventListener("click", (e) => {
+    if (e.target.tagName !== "LI") return;
+    const parts = q.value.trim().split(/\s+/); parts[parts.length - 1] = e.target.textContent;
+    q.value = parts.join(" ") + " "; list.hidden = true; q.focus();
+  });
+</script>
+</body>
+</html>

@@ -17,6 +17,8 @@ Format notes: sorted by Unicode code point, deduplicated, 1-20 letters, final le
 ## Docs
 
 - [README](https://github.com/roni5604/hebrew-words-db/blob/main/README.md): quick start in Python, JavaScript, shell, Dart
+- [Use-case guide](https://github.com/roni5604/hebrew-words-db/blob/main/docs/USE_CASES.en.md): word games, spellcheck, site search, wrong-keyboard-layout fixing, LLM/OCR quality checks, education, accessibility, passwords; Hebrew pitfalls (final letters, clitic prefixes ו/ה/ב/כ/ל/מ/ש, niqqud)
+- [Code examples](https://github.com/roni5604/hebrew-words-db/tree/main/examples): Python (stdlib), JavaScript, SQL, Dart
 - [Sources and methodology](https://github.com/roni5604/hebrew-words-db/blob/main/docs/SOURCES.md): how the list was compiled and why it is CC0
 - [Contributing](https://github.com/roni5604/hebrew-words-db/blob/main/CONTRIBUTING.md): how to add words
 
