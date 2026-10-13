@@ -41,9 +41,9 @@
    - **Website:** `https://roni5604.github.io/hebrew-words-db/`
    - **Topics (20):** `hebrew hebrew-wordlist hebrew-words hebrew-dictionary hebrew-language hebrew-nlp wordlist word-list dictionary lexicon dataset open-data public-domain cc0 nlp spellcheck word-games wordle ivrit llm`
    - **GitHub Pages:** Settings → Pages → Deploy from a branch → `main` / `/docs` → Save.
-1. **תמונת שיתוף** (2 דק'): Settings → General → Social preview → העלה את `docs/social-preview.png`.
-2. **Zenodo** (5 דק'): היכנס ל-zenodo.org עם GitHub → Settings → GitHub → הפעל את `hebrew-words-db`. **חייב לקרות לפני ה-Release הראשון** כדי שיקבל DOI.
-3. **Release ראשון** (2 דק'): Releases → Draft a new release → תג `v1.0.0` → Publish. ה-workflow יצרף את הקבצים, ו-Zenodo יפיק DOI. אחר כך הוסף את ה-DOI ל-`CITATION.cff` ול-README.
+1. ✅ **בוצע:** תמונת שיתוף הועלתה (Settings → General → Social preview).
+2. ✅ **בוצע:** Release `v1.0.0` פורסם, וה-workflow צירף אוטומטית txt/json/csv/zip.
+3. **Zenodo** (5 דק'): היכנס ל-zenodo.org עם GitHub → Settings → GitHub → הפעל את `hebrew-words-db`. ה-Release הבא (למשל `v1.1.0` אחרי תוספת מילים) יקבל DOI אוטומטית. אחר כך הוסף את ה-DOI ל-`CITATION.cff` ול-README.
 4. **Hugging Face** (5 דק'): צור טוקן write ב-huggingface.co/settings/tokens → בריפו: Settings → Secrets and variables → Actions → סוד בשם `HF_TOKEN` → Actions → "Sync to Hugging Face" → Run workflow. הדאטהסט יופיע ב-`huggingface.co/datasets/roni5604/hebrew-words`.
 5. **PyPI** (10 דק'): ב-pypi.org → Your account → Publishing → Add a pending publisher: owner `roni5604`, repo `hebrew-words-db`, workflow `release.yml`, environment `pypi`, project `hebrew-wordlist`. בריפו: Settings → Environments → צור `pypi`; Variables → `PUBLISH_PYPI` = `true`. ה-Release הבא יפרסם.
 6. **npm** (10 דק'): בדוק ש-`hebrew-wordlist` פנוי ב-npmjs.com (אם תפוס: שנה ל-`@roni5604/hebrew-words` ב-`packages/npm/package.json`). פרסם פעם אחת ידנית (`cd packages/npm && cp ../../data/words.json . && npm publish`), ואז הגדר Trusted Publisher בהגדרות החבילה (repo + `release.yml`) והוסף משתנה `PUBLISH_NPM` = `true`.
