@@ -1,0 +1,42 @@
+name: Validate
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Rebuild data/ from raw/
+        run: python3 scripts/build.py
+
+      - name: data/ must match raw/ (run scripts/build.py and commit)
+        run: |
+          if ! git diff --quiet -- data/ || [ -n "$(git status --porcelain -- data/)" ]; then
+            echo "::error::data/ is out of date. Run 'python3 scripts/build.py' and commit the result."
+            git status --short -- data/
+            exit 1
+          fi
+
+      - name: Sanity checks
+        run: |
+          python3 - <<'EOF'
+          import json, re
+          words = open("data/words.txt", encoding="utf-8").read().split("\n")
+          assert words[-1] == "", "words.txt must end with a newline"
+          words = words[:-1]
+          assert words == sorted(set(words)), "words.txt must be sorted and unique"
+          pat = re.compile(r"^[א-ת]{1,20}$")
+          bad = [w for w in words if not pat.match(w) or any(c in "ךםןףץ" for c in w[:-1])]
+          assert not bad, f"invalid words: {bad[:20]}"
+          assert json.load(open("data/words.json", encoding="utf-8")) == words
+          stats = json.load(open("data/stats.json", encoding="utf-8"))
+          assert stats["total_words"] == len(words)
+          print(f"OK: {len(words)} words")
+          EOF

@@ -1,4 +1,14 @@
 {
+  "name": "hebrew-words-db",
+  "description": "CC0 public-domain list of Hebrew words (incl. inflected forms). One word per line, no niqqud, no definitions.",
+  "language": "he",
+  "license": "CC0-1.0",
+  "homepage": "https://github.com/roni5604/hebrew-words-db",
+  "files": {
+    "txt": "data/words.txt",
+    "json": "data/words.json",
+    "csv": "data/words.csv"
+  },
   "total_words": 67008,
   "by_first_letter_count": {
     "א": 1607,

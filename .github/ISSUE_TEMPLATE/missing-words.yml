@@ -1,0 +1,19 @@
+name: "Missing words / חסרות מילים"
+description: "Suggest Hebrew words to add · הציעו מילים להוספה"
+title: "Missing words: "
+labels: ["words"]
+body:
+  - type: textarea
+    id: words
+    attributes:
+      label: "Words (one per line, no niqqud) · מילים (אחת בכל שורה, בלי ניקוד)"
+      placeholder: |
+        מחשבון
+        מחשבונים
+    validations:
+      required: true
+  - type: input
+    id: category
+    attributes:
+      label: "Category (optional) · קטגוריה (לא חובה)"
+      placeholder: "slang / verbs / food / tech ..."

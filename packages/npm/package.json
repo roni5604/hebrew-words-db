@@ -1,0 +1,18 @@
+{
+  "name": "hebrew-wordlist",
+  "version": "1.0.0",
+  "description": "The largest public-domain (CC0) list of Hebrew words - 67k+ words incl. inflections. Zero dependencies.",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "files": ["index.js", "index.d.ts", "words.json", "README.md"],
+  "keywords": ["hebrew", "word-list", "wordlist", "words", "dictionary", "lexicon", "spellcheck", "wordle", "nlp", "cc0", "ivrit", "עברית"],
+  "author": "Roni Michaeli (https://ronimichaeli.com/)",
+  "license": "(MIT AND CC0-1.0)",
+  "homepage": "https://github.com/roni5604/hebrew-words-db#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/roni5604/hebrew-words-db.git",
+    "directory": "packages/npm"
+  },
+  "bugs": "https://github.com/roni5604/hebrew-words-db/issues"
+}

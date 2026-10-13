@@ -91,6 +91,13 @@ def main() -> None:
         json.dumps(words, ensure_ascii=False, indent=None),
         encoding="utf-8",
     )
+    # CSV with a header row: renders as a nice table in the Hugging Face /
+    # Kaggle dataset viewers and loads directly with pandas.read_csv().
+    (DATA_DIR / "words.csv").write_text(
+        "word,length\n"
+        + "".join(f"{w},{len(w)}\n" for w in words),
+        encoding="utf-8",
+    )
 
     # Split by first letter for easy browsing on GitHub.
     for existing in BY_LETTER_DIR.glob("*.txt"):
@@ -105,6 +112,17 @@ def main() -> None:
 
     length_histogram = Counter(len(w) for w in words)
     stats = {
+        "name": "hebrew-words-db",
+        "description": "CC0 public-domain list of Hebrew words (incl. "
+        "inflected forms). One word per line, no niqqud, no definitions.",
+        "language": "he",
+        "license": "CC0-1.0",
+        "homepage": "https://github.com/roni5604/hebrew-words-db",
+        "files": {
+            "txt": "data/words.txt",
+            "json": "data/words.json",
+            "csv": "data/words.csv",
+        },
         "total_words": len(words),
         "by_first_letter_count": {
             letter: len(letter_words)

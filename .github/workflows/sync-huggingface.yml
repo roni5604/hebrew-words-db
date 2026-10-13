@@ -1,0 +1,60 @@
+name: Sync to Hugging Face
+
+# Mirrors the dataset to https://huggingface.co/datasets/<HF_REPO>.
+# Setup (once): create a write token at https://huggingface.co/settings/tokens
+# and add it as the repository secret HF_TOKEN. Optionally set the
+# repository variable HF_REPO (default: roni5604/hebrew-words).
+
+on:
+  push:
+    branches: [main]
+    paths: ["data/**", "hf/**", ".github/workflows/sync-huggingface.yml"]
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check for token
+        id: check
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          if [ -z "$HF_TOKEN" ]; then
+            echo "HF_TOKEN secret not set - skipping Hugging Face sync."
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/checkout@v4
+        if: steps.check.outputs.skip != 'true'
+
+      - uses: actions/setup-python@v5
+        if: steps.check.outputs.skip != 'true'
+        with:
+          python-version: "3.12"
+
+      - name: Upload
+        if: steps.check.outputs.skip != 'true'
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          HF_REPO: ${{ vars.HF_REPO || 'roni5604/hebrew-words' }}
+        run: |
+          pip install -q huggingface_hub
+          mkdir -p staging/data
+          cp hf/README.md staging/README.md
+          cp data/words.txt data/words.json data/words.csv data/stats.json staging/data/
+          cp LICENSE staging/LICENSE
+          python3 - <<'EOF'
+          import os
+          from huggingface_hub import HfApi
+          api = HfApi(token=os.environ["HF_TOKEN"])
+          repo = os.environ["HF_REPO"]
+          api.create_repo(repo, repo_type="dataset", exist_ok=True)
+          api.upload_folder(
+              repo_id=repo,
+              repo_type="dataset",
+              folder_path="staging",
+              commit_message=f"Sync from GitHub {os.environ['GITHUB_SHA'][:7]}",
+          )
+          print(f"Synced to https://huggingface.co/datasets/{repo}")
+          EOF

@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hebrew-wordlist"
+version = "1.0.0"  # overwritten from the git tag by .github/workflows/publish.yml
+description = "The largest public-domain (CC0) list of Hebrew words - 67k+ words incl. inflections. No dependencies."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT (code) / CC0-1.0 (word data)" }
+authors = [{ name = "Roni Michaeli" }]
+keywords = ["hebrew", "word list", "wordlist", "dictionary", "lexicon", "spellcheck", "nlp", "wordle", "cc0"]
+classifiers = [
+  "Natural Language :: Hebrew",
+  "Programming Language :: Python :: 3",
+  "Topic :: Text Processing :: Linguistic",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Science/Research",
+  "License :: CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+  "License :: OSI Approved :: MIT License",
+]
+
+[project.urls]
+Homepage = "https://github.com/roni5604/hebrew-words-db"
+Demo = "https://roni5604.github.io/hebrew-words-db/"
+Issues = "https://github.com/roni5604/hebrew-words-db/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+hebrew_wordlist = ["words.txt", "py.typed"]

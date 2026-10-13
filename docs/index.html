@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>מאגר מילים בעברית · Hebrew Word List (CC0) — hebrew-words-db</title>
+<meta name="description" content="The largest free public-domain (CC0) list of Hebrew words: 67,000+ words incl. plurals and verb conjugations. Download TXT/JSON/CSV or check a word online. מאגר המילים העברי החופשי הגדול ביותר — בדיקת מילים והורדה.">
+<meta name="keywords" content="Hebrew word list, Hebrew words, Hebrew dictionary, Hebrew wordlist txt, Hebrew wordle, מאגר מילים, רשימת מילים בעברית, מילון עברי, אוצר מילים">
+<link rel="canonical" href="https://roni5604.github.io/hebrew-words-db/">
+<meta property="og:title" content="hebrew-words-db — מאגר מילים בעברית (CC0)">
+<meta property="og:description" content="67,000+ Hebrew words, public domain. TXT / JSON / CSV.">
+<meta property="og:url" content="https://roni5604.github.io/hebrew-words-db/">
+<meta property="og:image" content="https://roni5604.github.io/hebrew-words-db/social-preview.png">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Dataset",
+  "name": "hebrew-words-db: Hebrew word list (CC0)",
+  "alternateName": ["Hebrew Words", "מאגר מילים בעברית"],
+  "description": "The largest public-domain list of Hebrew words on GitHub: more than 67,000 Modern Hebrew words including noun plurals, verb conjugations across binyanim and tenses, adjective agreement forms and everyday slang. UTF-8 plain text, one word per line, without niqqud or definitions. Released under CC0 1.0 for any use, including commercial products and machine-learning training.",
+  "url": "https://roni5604.github.io/hebrew-words-db/",
+  "sameAs": ["https://github.com/roni5604/hebrew-words-db", "https://huggingface.co/datasets/roni5604/hebrew-words"],
+  "keywords": ["Hebrew", "word list", "lexicon", "vocabulary", "dictionary", "spellcheck", "NLP", "public domain"],
+  "inLanguage": "he",
+  "isAccessibleForFree": true,
+  "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "creator": {"@type": "Person", "name": "Roni Michaeli", "url": "https://ronimichaeli.com/"},
+  "distribution": [
+    {"@type": "DataDownload", "encodingFormat": "text/plain", "contentUrl": "https://raw.githubusercontent.com/roni5604/hebrew-words-db/main/data/words.txt"},
+    {"@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": "https://raw.githubusercontent.com/roni5604/hebrew-words-db/main/data/words.json"},
+    {"@type": "DataDownload", "encodingFormat": "text/csv", "contentUrl": "https://raw.githubusercontent.com/roni5604/hebrew-words-db/main/data/words.csv"}
+  ]
+}
+</script>
+<style>
+  :root { --bg:#f7f8fb; --card:#fff; --ink:#14182b; --muted:#5d6480; --line:#e2e5ee; --accent:#0038b8; --ok:#137a3d; --no:#b42318; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#0f1220; --card:#181c2e; --ink:#eef0f8; --muted:#a2a8c3; --line:#2a2f47; --accent:#7aa2ff; --ok:#4ade80; --no:#f87171; } }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.6 system-ui, -apple-system, "Segoe UI", Arial, sans-serif; }
+  main { max-width: 860px; margin: 0 auto; padding: 32px 16px 64px; }
+  h1 { font-size: clamp(28px, 6vw, 44px); line-height:1.15; margin:0 0 8px; }
+  .en { direction:ltr; text-align:left; color:var(--muted); }
+  .count { color:var(--accent); font-variant-numeric: tabular-nums; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:20px; margin:20px 0; }
+  h2 { font-size:20px; margin:0 0 12px; }
+  input { width:100%; font:inherit; font-size:22px; padding:12px 14px; border-radius:10px; border:1px solid var(--line); background:var(--bg); color:var(--ink); }
+  input:focus { outline:2px solid var(--accent); outline-offset:1px; }
+  .row { display:flex; gap:10px; flex-wrap:wrap; }
+  .row > * { flex:1 1 160px; }
+  button, .btn { font:inherit; padding:10px 16px; border-radius:10px; border:1px solid var(--line); background:var(--accent); color:#fff; cursor:pointer; text-decoration:none; display:inline-block; text-align:center; }
+  .btn.ghost { background:transparent; color:var(--accent); }
+  #verdict { font-size:20px; font-weight:600; min-height:32px; margin-top:10px; }
+  .yes { color:var(--ok); } .no { color:var(--no); }
+  .chips { display:flex; flex-wrap:wrap; gap:8px; margin-top:12px; }
+  .chip { background:var(--bg); border:1px solid var(--line); border-radius:999px; padding:4px 12px; font-size:18px; }
+  .muted { color:var(--muted); font-size:14px; }
+  pre { direction:ltr; text-align:left; background:var(--bg); border:1px solid var(--line); border-radius:10px; padding:12px; overflow-x:auto; font-size:13px; }
+  footer { margin-top:40px; font-size:14px; color:var(--muted); }
+  a { color:var(--accent); }
+</style>
+</head>
+<body>
+<main>
+  <h1>מאגר מילים בעברית <span class="muted" style="font-size:.5em">CC0</span></h1>
+  <p>רשימת המילים העברית החופשית הגדולה ב-GitHub — <b class="count" id="count">67,000+</b> מילים, כולל רבים, הטיות פעלים ותארים. בלי ניקוד, בלי פירושים, בלי הגבלות רישיון.</p>
+  <p class="en">The largest free, public-domain list of Hebrew words. Free for any use — apps, games, spellcheckers, LLM training.</p>
+
+  <div class="card">
+    <h2>בדיקת מילה</h2>
+    <input id="q" placeholder="הקלידו מילה, למשל: מחשב" autocomplete="off" aria-label="Hebrew word">
+    <div id="verdict" aria-live="polite"></div>
+  </div>
+
+  <div class="card">
+    <h2>חיפוש לפי תבנית</h2>
+    <p class="muted">השתמשו ב-<b>?</b> לאות אחת וב-<b>*</b> לכל רצף. למשל <b>מ??ב</b> או <b>*ות</b>. מעולה לתשבצים ולוורדל.</p>
+    <input id="pat" placeholder="מ??ב" autocomplete="off" aria-label="pattern">
+    <div class="muted" id="patInfo"></div>
+    <div class="chips" id="patOut"></div>
+  </div>
+
+  <div class="card">
+    <h2>מילים אקראיות</h2>
+    <div class="row">
+      <button id="rnd">הגרל 12 מילים</button>
+      <select id="len" aria-label="length" style="font:inherit;padding:10px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink)">
+        <option value="0">כל אורך</option><option>3</option><option>4</option><option selected>5</option><option>6</option><option>7</option>
+      </select>
+    </div>
+    <div class="chips" id="rndOut"></div>
+  </div>
+
+  <div class="card">
+    <h2>הורדה ושימוש · Download</h2>
+    <div class="row">
+      <a class="btn" href="https://raw.githubusercontent.com/roni5604/hebrew-words-db/main/data/words.txt" download>words.txt</a>
+      <a class="btn" href="https://raw.githubusercontent.com/roni5604/hebrew-words-db/main/data/words.json" download>words.json</a>
+      <a class="btn" href="https://raw.githubusercontent.com/roni5604/hebrew-words-db/main/data/words.csv" download>words.csv</a>
+      <a class="btn ghost" href="https://github.com/roni5604/hebrew-words-db">GitHub ⭐</a>
+    </div>
+<pre>// JavaScript
+const words = await fetch("https://cdn.jsdelivr.net/gh/roni5604/hebrew-words-db@main/data/words.json").then(r =&gt; r.json());
+
+# Python
+import urllib.request
+words = urllib.request.urlopen("https://raw.githubusercontent.com/roni5604/hebrew-words-db/main/data/words.txt").read().decode().split()</pre>
+  </div>
+
+  <footer>
+    Data: <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</a> · Code: MIT ·
+    Maintainer: <a href="https://ronimichaeli.com/">Roni Michaeli · רוני מיכאלי</a> ·
+    <a href="https://github.com/roni5604/hebrew-words-db/issues/new?title=Missing%20words">חסרה מילה?</a>
+  </footer>
+</main>
+<script>
+(async () => {
+  const SRC = ["https://cdn.jsdelivr.net/gh/roni5604/hebrew-words-db@main/data/words.json",
+               "https://raw.githubusercontent.com/roni5604/hebrew-words-db/main/data/words.json"];
+  let words = [];
+  for (const u of SRC) { try { words = await (await fetch(u)).json(); break; } catch (e) {} }
+  const set = new Set(words);
+  const $ = (id) => document.getElementById(id);
+  if (words.length) $("count").textContent = words.length.toLocaleString("en-US");
+  const clean = (s) => s.replace(/[֑-ׇ'"׳״\s]/g, "");
+  const chip = (w) => `<span class="chip">${w}</span>`;
+
+  $("q").addEventListener("input", (e) => {
+    const w = clean(e.target.value);
+    if (!w) { $("verdict").textContent = ""; return; }
+    const ok = set.has(w);
+    $("verdict").className = ok ? "yes" : "no";
+    $("verdict").textContent = ok ? `✓ "${w}" נמצאת במאגר` : `✗ "${w}" לא נמצאת במאגר (עדיין)`;
+  });
+
+  $("pat").addEventListener("input", (e) => {
+    const p = clean(e.target.value.replace(/[?*]/g, (m) => m === "?" ? "\u0001" : "\u0002"))
+      .replace(/[.+^${}()|[\]\\]/g, "\\$&").replace(/\u0001/g, ".").replace(/\u0002/g, ".*");
+    if (!p) { $("patOut").innerHTML = ""; $("patInfo").textContent = ""; return; }
+    const re = new RegExp("^" + p + "$");
+    const hits = words.filter((w) => re.test(w));
+    $("patInfo").textContent = `${hits.length.toLocaleString("en-US")} תוצאות` + (hits.length > 120 ? " (מוצגות 120 הראשונות)" : "");
+    $("patOut").innerHTML = hits.slice(0, 120).map(chip).join("");
+  });
+
+  const draw = () => {
+    const n = +$("len").value;
+    const pool = n ? words.filter((w) => w.length === n) : words;
+    const out = [];
+    for (let i = 0; i < 12 && pool.length; i++) out.push(pool[Math.floor(Math.random() * pool.length)]);
+    $("rndOut").innerHTML = out.map(chip).join("");
+  };
+  $("rnd").addEventListener("click", draw);
+  draw();
+})();
+</script>
+</body>
+</html>

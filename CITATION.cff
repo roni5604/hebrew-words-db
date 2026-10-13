@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use this dataset, you may cite it as below (not required - the data is CC0)."
+type: dataset
+title: "hebrew-words-db: A public-domain list of Hebrew words"
+abstract: >-
+  A large, growing, public-domain (CC0-1.0) list of Modern Hebrew words,
+  including noun plurals, verb conjugations across binyanim and tenses,
+  adjective agreement forms and everyday slang. Plain UTF-8 text, one word
+  per line, without niqqud or definitions. Intended for spellcheckers,
+  word games, NLP and LLM work.
+authors:
+  - family-names: Michaeli
+    given-names: Roni
+    website: "https://ronimichaeli.com/"
+repository-code: "https://github.com/roni5604/hebrew-words-db"
+url: "https://roni5604.github.io/hebrew-words-db/"
+license: CC0-1.0
+keywords:
+  - Hebrew
+  - word list
+  - wordlist
+  - lexicon
+  - vocabulary
+  - dictionary
+  - NLP
+  - public domain
+  - CC0

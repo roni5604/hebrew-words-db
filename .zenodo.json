@@ -1,0 +1,12 @@
+{
+  "title": "hebrew-words-db: A public-domain list of Hebrew words",
+  "upload_type": "dataset",
+  "description": "A large, growing, public-domain (CC0-1.0) list of Modern Hebrew words, including noun plurals, verb conjugations, adjective agreement forms and everyday slang. Plain UTF-8 text, one word per line, without niqqud or definitions. Source: https://github.com/roni5604/hebrew-words-db",
+  "creators": [
+    { "name": "Michaeli, Roni" }
+  ],
+  "license": "cc-zero",
+  "access_right": "open",
+  "language": "heb",
+  "keywords": ["Hebrew", "word list", "wordlist", "lexicon", "vocabulary", "NLP", "CC0", "public domain"]
+}

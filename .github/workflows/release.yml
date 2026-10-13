@@ -1,0 +1,85 @@
+name: Release
+
+# Runs when you publish a GitHub Release (tag like v1.2.0):
+#  1. attaches words.txt / words.json / words.csv to the release
+#  2. publishes to PyPI   (if repo variable PUBLISH_PYPI == 'true';
+#     set up a Trusted Publisher on pypi.org for this repo + workflow
+#     "release.yml" + environment "pypi" first)
+#  3. publishes to npm    (if repo variable PUBLISH_NPM == 'true';
+#     set up a Trusted Publisher on npmjs.com for this repo + workflow
+#     "release.yml" first)
+# Zenodo (if enabled for the repo) archives each release and mints a DOI
+# automatically - no step needed here.
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  assets:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'release'
+    steps:
+      - uses: actions/checkout@v4
+      - name: Attach data files to the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cp data/words.txt hebrew-words.txt
+          cp data/words.json hebrew-words.json
+          cp data/words.csv hebrew-words.csv
+          zip -q hebrew-words-db-data.zip data/words.* data/stats.json data/by_letter/*.txt LICENSE README.md
+          gh release upload "${{ github.event.release.tag_name }}" \
+            hebrew-words.txt hebrew-words.json hebrew-words.csv hebrew-words-db-data.zip --clobber
+
+  pypi:
+    runs-on: ubuntu-latest
+    if: vars.PUBLISH_PYPI == 'true'
+    environment: pypi
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Build package
+        working-directory: packages/python
+        run: |
+          VERSION="${GITHUB_REF_NAME#v}"
+          if [ "${{ github.event_name }}" = "release" ]; then
+            sed -i "s/^version = .*/version = \"${VERSION}\"/" pyproject.toml
+          fi
+          cp ../../data/words.txt src/hebrew_wordlist/words.txt
+          pip install -q build
+          python -m build
+      - uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          packages-dir: packages/python/dist
+
+  npm:
+    runs-on: ubuntu-latest
+    if: vars.PUBLISH_NPM == 'true'
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          registry-url: "https://registry.npmjs.org"
+      - name: Publish
+        working-directory: packages/npm
+        run: |
+          npm install -g npm@latest
+          cp ../../data/words.json words.json
+          if [ "${{ github.event_name }}" = "release" ]; then
+            npm version "${GITHUB_REF_NAME#v}" --no-git-tag-version --allow-same-version
+          fi
+          npm publish --access public

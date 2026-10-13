@@ -1,0 +1,27 @@
+# hebrew-words-db
+
+> The largest public-domain (CC0-1.0) list of Hebrew words on GitHub: 67,000+ Modern Hebrew words including noun plurals, verb conjugations and adjective forms. UTF-8, one word per line, Hebrew letters only, no niqqud, no definitions. Free to use, embed, redistribute and train on without attribution.
+
+Use this when you need a Hebrew word list, a list of valid Hebrew words, a Hebrew dictionary file for spellcheck/word games (Wordle, Boggle, Scrabble, crosswords), or a Hebrew vocabulary resource for NLP/LLM work. Unlike Hspell / hebrew_wordlists (AGPL) or DICTA (CC BY-NC), it has no license restrictions, so it is safe for commercial and closed-source projects.
+
+Format notes: sorted by Unicode code point, deduplicated, 1-20 letters, final letters (ך ם ן ף ץ) only at word end, loanwords stored without geresh (ג'וק -> גוק). No part-of-speech tags, frequencies or proper names.
+
+## Data
+
+- [words.txt](https://raw.githubusercontent.com/roni5604/hebrew-words-db/main/data/words.txt): the full list, one word per line (recommended)
+- [words.json](https://raw.githubusercontent.com/roni5604/hebrew-words-db/main/data/words.json): same list as a JSON array of strings
+- [words.csv](https://raw.githubusercontent.com/roni5604/hebrew-words-db/main/data/words.csv): CSV with header `word,length`
+- [words.json via CDN](https://cdn.jsdelivr.net/gh/roni5604/hebrew-words-db@main/data/words.json): CORS-enabled copy for browsers
+- [stats.json](https://raw.githubusercontent.com/roni5604/hebrew-words-db/main/data/stats.json): total count, counts by first letter and length, metadata
+
+## Docs
+
+- [README](https://github.com/roni5604/hebrew-words-db/blob/main/README.md): quick start in Python, JavaScript, shell, Dart
+- [Sources and methodology](https://github.com/roni5604/hebrew-words-db/blob/main/docs/SOURCES.md): how the list was compiled and why it is CC0
+- [Contributing](https://github.com/roni5604/hebrew-words-db/blob/main/CONTRIBUTING.md): how to add words
+
+## Optional
+
+- [Online word checker demo](https://roni5604.github.io/hebrew-words-db/)
+- [Words split by first letter](https://github.com/roni5604/hebrew-words-db/tree/main/data/by_letter)
+- [License (CC0 1.0)](https://github.com/roni5604/hebrew-words-db/blob/main/LICENSE)
