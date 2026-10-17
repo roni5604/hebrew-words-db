@@ -10,6 +10,7 @@
 [![Data license: CC0-1.0](https://img.shields.io/badge/data%20license-CC0--1.0-lightgrey.svg)](LICENSE)
 [![Code license: MIT](https://img.shields.io/badge/code%20license-MIT-blue.svg)](LICENSE-CODE)
 [![Validate](https://github.com/roni5604/hebrew-words-db/actions/workflows/validate.yml/badge.svg)](https://github.com/roni5604/hebrew-words-db/actions/workflows/validate.yml)
+[![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-dataset-yellow)](https://huggingface.co/datasets/roni5604/hebrew-words)
 [![Try it](https://img.shields.io/badge/demo-word%20checker-success)](https://roni5604.github.io/hebrew-words-db/)
 
 </div>
@@ -25,6 +26,7 @@ No install, no account, no API key. Direct links (always the latest version):
 | **TXT** (one word per line) | https://raw.githubusercontent.com/roni5604/hebrew-words-db/main/data/words.txt |
 | **JSON** (array of strings) | https://raw.githubusercontent.com/roni5604/hebrew-words-db/main/data/words.json |
 | **CSV** (`word,length` header) | https://raw.githubusercontent.com/roni5604/hebrew-words-db/main/data/words.csv |
+| **Hugging Face** (`datasets` / pandas) | https://huggingface.co/datasets/roni5604/hebrew-words |
 | CDN (fast, CORS-enabled, for browsers) | https://cdn.jsdelivr.net/gh/roni5604/hebrew-words-db@main/data/words.json |
 | Stats / metadata | https://raw.githubusercontent.com/roni5604/hebrew-words-db/main/data/stats.json |
 
@@ -46,6 +48,12 @@ print(len(hebrew), "שלום" in hebrew)   # 67008 True
 ```python
 import pandas as pd
 df = pd.read_csv("https://raw.githubusercontent.com/roni5604/hebrew-words-db/main/data/words.csv")
+```
+
+**Hugging Face `datasets`**
+```python
+from datasets import load_dataset
+words = set(load_dataset("roni5604/hebrew-words", split="train")["word"])
 ```
 
 **JavaScript / TypeScript** (browser or Node 18+)

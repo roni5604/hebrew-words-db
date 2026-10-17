@@ -12,6 +12,7 @@ Format notes: sorted by Unicode code point, deduplicated, 1-20 letters, final le
 - [words.json](https://raw.githubusercontent.com/roni5604/hebrew-words-db/main/data/words.json): same list as a JSON array of strings
 - [words.csv](https://raw.githubusercontent.com/roni5604/hebrew-words-db/main/data/words.csv): CSV with header `word,length`
 - [words.json via CDN](https://cdn.jsdelivr.net/gh/roni5604/hebrew-words-db@main/data/words.json): CORS-enabled copy for browsers
+- [Hugging Face dataset](https://huggingface.co/datasets/roni5604/hebrew-words): `load_dataset("roni5604/hebrew-words")`, column `word`
 - [stats.json](https://raw.githubusercontent.com/roni5604/hebrew-words-db/main/data/stats.json): total count, counts by first letter and length, metadata
 
 ## Docs
