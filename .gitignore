@@ -11,3 +11,6 @@ packages/python/build/
 packages/python/src/*.egg-info/
 packages/npm/words.json
 packages/npm/*.tgz
+
+# work-in-progress word batches (verified before merging into raw/)
+raw/staging/
