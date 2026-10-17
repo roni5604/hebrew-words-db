@@ -24,6 +24,14 @@
 6. פתחו Pull Request עם תיאור קצר של מה הוספתם (למשל "הוספתי 200 מילות
    סלנג צבאי").
 
+
+### כלים שחוסכים עבודה
+
+- **כללי הכתיבה המלאים:** [`docs/WORD_RULES.md`](docs/WORD_RULES.md) (בלי תחיליות צמודות כמו ו/ה/ב, כתיב מלא, בלי שמות פרטיים).
+- **לפני שמוסיפים — בדקו מה חסר:** `python3 scripts/new_words.py --check מילה1 מילה2`
+- **סינון קובץ מועמדים** כך שרק מילים חדשות ותקינות ייכנסו:
+  `python3 scripts/new_words.py candidates.txt -o raw/my_batch_raw.txt --header "תיאור"`
+
 ## English
 
 Thanks for helping grow this dictionary! A few simple rules:
@@ -49,3 +57,11 @@ Thanks for helping grow this dictionary! A few simple rules:
    script).
 6. Open a Pull Request describing what you added (e.g. "Added 200
    military slang words").
+
+### Tools that save work
+
+- **Full spelling rules:** [`docs/WORD_RULES.md`](docs/WORD_RULES.md) (no glued clitic prefixes like ו/ה/ב, ktiv male, no proper names).
+- **Check what's missing before adding:** `python3 scripts/new_words.py --check word1 word2`
+- **Filter a candidate file** so only new, valid words go in:
+  `python3 scripts/new_words.py candidates.txt -o raw/my_batch_raw.txt --header "description"`
+- After `build.py`, `python3 scripts/update_counts.py` refreshes the word count in the README, site and packages.
