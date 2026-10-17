@@ -76,6 +76,7 @@ Spellcheck and autocomplete, Hebrew word games (Wordle, Boggle, Scrabble, crossw
   title        = {hebrew-words-db: A public-domain list of Hebrew words},
   year         = {2026},
   howpublished = {\url{https://github.com/roni5604/hebrew-words-db}},
+  doi          = {10.5281/zenodo.23442852},
   note         = {CC0-1.0}
 }
 ```

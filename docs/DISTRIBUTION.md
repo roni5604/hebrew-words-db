@@ -43,7 +43,7 @@
    - **GitHub Pages:** Settings → Pages → Deploy from a branch → `main` / `/docs` → Save.
 1. ✅ **בוצע:** תמונת שיתוף הועלתה (Settings → General → Social preview).
 2. ✅ **בוצע:** Release `v1.0.0` פורסם, וה-workflow צירף אוטומטית txt/json/csv/zip.
-3. ✅ **בוצע:** Zenodo מחובר לריפו — כל Release מקבל DOI אוטומטית.
+3. ✅ **בוצע:** Zenodo מחובר — DOI לכל הגרסאות: `10.5281/zenodo.23442852` (https://doi.org/10.5281/zenodo.23442852). כל Release חדש מקבל DOI משלו אוטומטית.
 4. ✅ **בוצע:** הדאטהסט באוויר ב-https://huggingface.co/datasets/roni5604/hebrew-words. **לסנכרון אוטומטי** בכל עדכון: צור טוקן write ב-huggingface.co/settings/tokens והוסף אותו בריפו כסוד בשם `HF_TOKEN` (Settings → Secrets and variables → Actions). עד אז, אפשר לבקש מ-Claude להעלות גרסה חדשה.
 5. **PyPI** (10 דק'): ב-pypi.org → Your account → Publishing → Add a pending publisher: owner `roni5604`, repo `hebrew-words-db`, workflow `release.yml`, environment `pypi`, project `hebrew-wordlist`. בריפו: Settings → Environments → צור `pypi`; Variables → `PUBLISH_PYPI` = `true`. ה-Release הבא יפרסם.
 6. **npm** (10 דק'): בדוק ש-`hebrew-wordlist` פנוי ב-npmjs.com (אם תפוס: שנה ל-`@roni5604/hebrew-words` ב-`packages/npm/package.json`). פרסם פעם אחת ידנית (`cd packages/npm && cp ../../data/words.json . && npm publish`), ואז הגדר Trusted Publisher בהגדרות החבילה (repo + `release.yml`) והוסף משתנה `PUBLISH_NPM` = `true`.

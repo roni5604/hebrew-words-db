@@ -11,6 +11,7 @@
 [![Code license: MIT](https://img.shields.io/badge/code%20license-MIT-blue.svg)](LICENSE-CODE)
 [![Validate](https://github.com/roni5604/hebrew-words-db/actions/workflows/validate.yml/badge.svg)](https://github.com/roni5604/hebrew-words-db/actions/workflows/validate.yml)
 [![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-dataset-yellow)](https://huggingface.co/datasets/roni5604/hebrew-words)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23442852.svg)](https://doi.org/10.5281/zenodo.23442852)
 [![Try it](https://img.shields.io/badge/demo-word%20checker-success)](https://roni5604.github.io/hebrew-words-db/)
 
 </div>
@@ -185,6 +186,7 @@ GitHub shows a **"Cite this repository"** button (from [`CITATION.cff`](CITATION
   title        = {hebrew-words-db: A public-domain list of Hebrew words},
   year         = {2026},
   howpublished = {\url{https://github.com/roni5604/hebrew-words-db}},
+  doi          = {10.5281/zenodo.23442852},
   note         = {CC0-1.0}
 }
 ```

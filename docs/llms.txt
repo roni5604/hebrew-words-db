@@ -27,4 +27,5 @@ Format notes: sorted by Unicode code point, deduplicated, 1-20 letters, final le
 
 - [Online word checker demo](https://roni5604.github.io/hebrew-words-db/)
 - [Words split by first letter](https://github.com/roni5604/hebrew-words-db/tree/main/data/by_letter)
+- [Zenodo archive, DOI 10.5281/zenodo.23442852](https://doi.org/10.5281/zenodo.23442852): permanent citable archive of every release
 - [License (CC0 1.0)](https://github.com/roni5604/hebrew-words-db/blob/main/LICENSE)
