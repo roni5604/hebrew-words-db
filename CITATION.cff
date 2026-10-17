@@ -15,8 +15,8 @@ authors:
 repository-code: "https://github.com/roni5604/hebrew-words-db"
 url: "https://roni5604.github.io/hebrew-words-db/"
 license: CC0-1.0
-version: "1.0.0"
-date-released: "2026-10-13"
+version: "1.1.0"
+date-released: "2026-10-18"
 keywords:
   - Hebrew
   - word list
