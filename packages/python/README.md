@@ -1,6 +1,6 @@
 # hebrew-wordlist
 
-The largest public-domain (CC0) list of Hebrew words — 117,000+ words including plurals, verb conjugations and adjective forms. Zero dependencies. Data from [github.com/roni5604/hebrew-words-db](https://github.com/roni5604/hebrew-words-db).
+The largest public-domain (CC0) list of Hebrew words — 120,000+ words including plurals, verb conjugations and adjective forms. Zero dependencies. Data from [github.com/roni5604/hebrew-words-db](https://github.com/roni5604/hebrew-words-db).
 
 ```bash
 pip install hebrew-wordlist
@@ -10,7 +10,7 @@ pip install hebrew-wordlist
 import hebrew_wordlist as hw
 
 hw.is_word("שלום")        # True
-len(hw.words())            # 117000+
+len(hw.words())            # 120000+
 hw.of_length(5)[:3]        # five-letter words, e.g. for a Hebrew Wordle
 hw.starting_with("מח")     # prefix search
 hw.random_words(3, seed=1)
