@@ -6,6 +6,7 @@ raw/.
 
 Usage:
     python3 scripts/build.py
+    python3 scripts/build.py --exclude "v2_pending_*"   # skip unreviewed batches
 
 See CONTRIBUTING.md for how to add new words, and docs/SOURCES.md for
 the methodology / licensing rationale behind this word list.
@@ -46,8 +47,16 @@ def _strip_geresh(word: str) -> str:
     return word
 
 
+EXCLUDE: list[str] = []
+
+
+def raw_files() -> list[Path]:
+    files = sorted(RAW_DIR.glob("*_raw*.txt"))
+    return [p for p in files if not any(p.match(pat) for pat in EXCLUDE)]
+
+
 def iter_raw_lines():
-    for path in sorted(RAW_DIR.glob("*_raw*.txt")):
+    for path in raw_files():
         for lineno, line in enumerate(
             path.read_text(encoding="utf-8").splitlines(), start=1
         ):
@@ -70,6 +79,12 @@ def is_valid_word(word: str) -> bool:
 
 
 def main() -> None:
+    import argparse
+
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--exclude", action="append", default=[],
+                    help="glob of raw file names to skip (repeatable)")
+    EXCLUDE.extend(ap.parse_args().exclude)
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     BY_LETTER_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -132,9 +147,7 @@ def main() -> None:
             str(length): count
             for length, count in sorted(length_histogram.items())
         },
-        "raw_files_processed": sorted(
-            {p.name for p in RAW_DIR.glob("*_raw*.txt")}
-        ),
+        "raw_files_processed": sorted({p.name for p in raw_files()}),
         "rejected_line_count": len(rejected),
     }
     (DATA_DIR / "stats.json").write_text(
