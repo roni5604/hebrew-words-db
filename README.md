@@ -2,7 +2,7 @@
 
 # hebrew-words-db — Hebrew word list (CC0) · מאגר מילים בעברית
 
-**The largest free, public-domain (CC0) list of Hebrew words on GitHub — 139,000+ words including plurals, verb conjugations and adjective forms. Plain text, one word per line. No niqqud, no definitions, no license strings attached.**
+**The largest free, public-domain (CC0) list of Hebrew words on GitHub — 157,000+ words including plurals, verb conjugations and adjective forms. Plain text, one word per line. No niqqud, no definitions, no license strings attached.**
 
 **רשימת המילים העברית החופשית הגדולה ב-GitHub — מעל 67,000 מילים כולל צורות רבים, הטיות פעלים ותארים. קובץ טקסט פשוט, מילה בכל שורה. בלי ניקוד, בלי פירושים, בלי הגבלות רישיון.**
 
@@ -42,7 +42,7 @@ import urllib.request
 URL = "https://raw.githubusercontent.com/roni5604/hebrew-words-db/main/data/words.txt"
 words = urllib.request.urlopen(URL).read().decode("utf-8").split()
 hebrew = set(words)
-print(len(hebrew), "שלום" in hebrew)   # 139794 True
+print(len(hebrew), "שלום" in hebrew)   # 157211 True
 ```
 
 **pandas**
@@ -87,7 +87,7 @@ Almost every other comprehensive Hebrew word list comes with a license that bloc
 
 | Resource | Size | License | Can you ship it in a closed-source / commercial product? |
 |---|---|---|---|
-| **hebrew-words-db (this repo)** | **139k+ words, growing** | **CC0 (public domain)** | ✅ **Yes — no attribution required** |
+| **hebrew-words-db (this repo)** | **157k+ words, growing** | **CC0 (public domain)** | ✅ **Yes — no attribution required** |
 | Hspell / hunspell he_IL | large (generated) | AGPL-3.0 / GPL | ❌ Copyleft applies to your code |
 | eyaler/hebrew_wordlists | large | AGPL-3.0 | ❌ Copyleft |
 | DICTA resources | varies | CC BY-NC | ❌ Non-commercial only |
