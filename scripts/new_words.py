@@ -80,7 +80,7 @@ def main() -> None:
         if not w or w in seen:
             continue
         seen.add(w)
-        if not is_valid_word(w):
+        if not is_valid_word(w) or re.search(r"(.)\1\1", w):
             invalid.append(raw)
         elif w in known:
             dup += 1

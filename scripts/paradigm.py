@@ -108,6 +108,10 @@ def noun(fields: list[str]) -> list[str]:
             base = pl
         if "noplposs" not in flags:
             for suf in (PL_SUFFIXES_3 if poss3 else PL_SUFFIXES):
+                # stem ending in a consonantal yod (ביטוי, ציווי): the suffix's
+                # first yod is written once: ביטוי+יי -> ביטויי, +ייך -> ביטוייך
+                if base.endswith("י") and suf.startswith("יי"):
+                    suf = suf[1:]
                 out.append(fin(base + suf))
     return out
 
