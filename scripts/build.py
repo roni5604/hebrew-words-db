@@ -125,6 +125,19 @@ def main() -> None:
             "\n".join(letter_words) + "\n", encoding="utf-8"
         )
 
+    # Split by length (games: Wordle = 5 letters, crosswords, Boggle).
+    by_length_dir = DATA_DIR / "by_length"
+    by_length_dir.mkdir(parents=True, exist_ok=True)
+    for existing in by_length_dir.glob("*.txt"):
+        existing.unlink()
+    by_len: dict[int, list[str]] = {}
+    for word in words:
+        by_len.setdefault(len(word), []).append(word)
+    for n, len_words in by_len.items():
+        (by_length_dir / f"{n:02d}.txt").write_text(
+            "\n".join(len_words) + "\n", encoding="utf-8"
+        )
+
     length_histogram = Counter(len(w) for w in words)
     stats = {
         "name": "hebrew-words-db",

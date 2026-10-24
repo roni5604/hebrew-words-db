@@ -29,6 +29,7 @@ No install, no account, no API key. Direct links (always the latest version):
 | **CSV** (`word,length` header) | https://raw.githubusercontent.com/roni5604/hebrew-words-db/main/data/words.csv |
 | **Hugging Face** (`datasets` / pandas) | https://huggingface.co/datasets/roni5604/hebrew-words |
 | CDN (fast, CORS-enabled, for browsers) | https://cdn.jsdelivr.net/gh/roni5604/hebrew-words-db@main/data/words.json |
+| **5-letter words** (Wordle) | https://raw.githubusercontent.com/roni5604/hebrew-words-db/main/data/by_length/05.txt |
 | Stats / metadata | https://raw.githubusercontent.com/roni5604/hebrew-words-db/main/data/stats.json |
 
 **Shell**
@@ -144,6 +145,7 @@ data/                       ← the dataset (generated – don't edit by hand)
   words.csv                 CSV with header: word,length
   stats.json                totals, counts by first letter & length, metadata
   by_letter/<א-ת>.txt       the list split by first letter
+  by_length/NN.txt          the list split by word length (05.txt = all 5-letter words)
 raw/*_raw.txt               source batches – add new words here
 scripts/build.py            rebuilds data/ from raw/ (stdlib only)
 examples/                   runnable code: games, spellcheck, search, AI, security
