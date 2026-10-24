@@ -1,0 +1,57 @@
+# Batch: Ben-Yehuda corpus tier 2 (freq 15-49), chunk 0, plus paradigms
+# Source: compiled from general knowledge of Modern Hebrew (AI-assisted),
+# filtered against the existing dataset by scripts/new_words.py.
+# License: CC0 1.0 (public domain), see LICENSE.
+
+אדמימות
+אונקיות
+אונקייה
+אספלניות
+אספלנית
+הוצגנו
+הוצגת
+הוצגתי
+הוצגתם
+הוצק
+הוצקה
+הוצקו
+הלניסטים
+העלילה
+הפציע
+הפציעה
+יותרת
+ייאמן
+יעליל
+יעלילו
+יפציע
+כתית
+להינפש
+מוזאיקה
+מוזה
+מוזות
+מיקח
+מעלילה
+מעלילות
+מעלילים
+מפציע
+מפציעה
+נחיצותה
+נחיצותו
+נחיצותם
+ניחן
+ניחנה
+ניחנו
+פרבוסלבי
+פרבוסלביות
+פרבוסלבים
+פרבוסלבית
+פרנק
+פרנקים
+קורפוס
+קפנדריה
+רפורמציה
+שטריימל
+שטריימלים
+תעליל
+תפציע
+תקבולות
