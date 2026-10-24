@@ -1,7 +1,7 @@
 {
   "name": "hebrew-wordlist",
   "version": "1.2.0",
-  "description": "The largest public-domain (CC0) list of Hebrew words - 157k+ words incl. inflections. Zero dependencies.",
+  "description": "The largest public-domain (CC0) list of Hebrew words - 160k+ words incl. inflections. Zero dependencies.",
   "main": "index.js",
   "types": "index.d.ts",
   "files": ["index.js", "index.d.ts", "words.json", "README.md"],
