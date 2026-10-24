@@ -1,0 +1,37 @@
+# Batch v2: words reported missing by the maintainer (Roni)
+# Source: compiled from general knowledge of Modern Hebrew (AI-assisted),
+# filtered against the existing dataset by scripts/new_words.py.
+# License: CC0 1.0 (public domain), see LICENSE.
+
+אאיית
+אדיה
+אדיהם
+אדיהן
+אדיו
+איות
+איותה
+איותו
+איותי
+איותך
+איותכם
+איותם
+איותן
+איותנו
+איית
+אייתה
+אייתו
+אייתי
+אייתם
+אייתן
+אייתנו
+יאיית
+יאייתו
+לאיית
+מאיית
+מאייתות
+מאייתים
+מאייתת
+נאיית
+תאיית
+תאייתו
+תאייתי
