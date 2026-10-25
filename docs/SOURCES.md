@@ -57,3 +57,26 @@ citations transparently.
 - General public knowledge of Modern Hebrew as spoken/written in Israel
   (news, conversation, education) - for slang and everyday vocabulary
   coverage.
+
+## Public-domain corpus used for gap-finding
+
+- **Project Ben-Yehuda** (פרויקט בן-יהודה, public-domain Hebrew literature,
+  github.com/projectbenyehuda/public_domain_dump). Token frequencies from
+  the public-domain dump were used to *find candidate words missing from the
+  list*. Every candidate was then judged individually (archaic forms, old
+  spellings, names and multi-word tokens were discarded), rewritten in
+  Modern ktiv male where needed, and reviewed before inclusion. The texts
+  themselves are in the public domain, so this adds no license conditions.
+  Batches from this source are the `raw/v3_corpus_*` and `raw/v3_corpus2_*`
+  files.
+
+## Quality process (all batches since v2)
+
+Every AI-compiled batch is filtered against the existing data
+(`scripts/new_words.py`), inflected by a shared generator
+(`scripts/paradigm.py`) where possible, and then reviewed by an independent
+reviewer pass that did not produce it; rejected words are removed before the
+batch is built. Word-family "gap detectors" (e.g. lemmas missing possessive
+forms, verbs missing tenses) and root-by-root sweeps are used to decide
+*what* to look for — the words themselves are still written from knowledge
+of Modern Hebrew, not copied from another list.
