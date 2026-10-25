@@ -24,7 +24,7 @@ configs:
 
 # Hebrew Words — public-domain Hebrew word list · מאגר מילים בעברית
 
-**186,000+ Modern Hebrew words** — including noun plurals, verb conjugations and adjective forms — released under **CC0 1.0 (public domain)**. No niqqud, no definitions, just words.
+**188,000+ Modern Hebrew words** — including noun plurals, verb conjugations and adjective forms — released under **CC0 1.0 (public domain)**. No niqqud, no definitions, just words.
 
 This is a mirror of [github.com/roni5604/hebrew-words-db](https://github.com/roni5604/hebrew-words-db), synced automatically on every update. Issues and contributions go to GitHub.
 
