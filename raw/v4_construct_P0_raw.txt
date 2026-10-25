@@ -1,0 +1,45 @@
+# Batch v4: construct plurals / possessives of participles and agent nouns, list P0
+# Source: compiled from general knowledge of Modern Hebrew (AI-assisted),
+# filtered against the existing dataset by scripts/new_words.py.
+# License: CC0 1.0 (public domain), see LICENSE.
+
+בוניה
+בוניהם
+בוניהן
+בוניו
+בכיריה
+בכיריהם
+בכיריהן
+בכיריו
+בריוניה
+בריוניהם
+בריוניהן
+בריוניו
+גנרליה
+גנרליהם
+גנרליהן
+גנרליו
+הוגיה
+הוגיהם
+הוגיהן
+הוגיו
+יוצאיה
+יוצאיהם
+יוצאיהן
+יוצאיו
+כדורגלניה
+כדורגלניהם
+כדורגלניהן
+כדורגלניו
+כדורסלניה
+כדורסלניהם
+כדורסלניהן
+כדורסלניו
+מבוטחיה
+מבוטחיהם
+מבוטחיהן
+מבוטחיו
+מחזריה
+מחזריהם
+מחזריהן
+מחזריו

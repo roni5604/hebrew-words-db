@@ -1,0 +1,47 @@
+# Batch v4: construct plurals / possessives of participles and agent nouns, list K0
+# Source: compiled from general knowledge of Modern Hebrew (AI-assisted),
+# filtered against the existing dataset by scripts/new_words.py.
+# License: CC0 1.0 (public domain), see LICENSE.
+
+אדמיני
+אהודי
+אוליגרכי
+אייקוני
+אכולי
+אלמנטי
+אנוסי
+אפוטרופוסי
+אפוטרופוסיה
+אפוטרופוסיהם
+אפוטרופוסיהן
+אפוטרופוסיו
+אפוטרופסי
+אפוטרופסיה
+אפוטרופסיהם
+אפוטרופסיהן
+אפוטרופסיו
+אפופי
+אפיפיורי
+אקורדי
+בוגדי
+ביעות
+ברוני
+גובי
+גולי
+גלוחי
+גלויי
+זוכי
+זקופי
+חדורי
+חוגגי
+חטובי
+חיוורי
+חלפני
+חפויי
+חשוקי
+טייקוני
+טעוני
+טרוטי
+ייבואני
+כהני
+לומדי

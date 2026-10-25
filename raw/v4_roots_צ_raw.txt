@@ -1,0 +1,56 @@
+# Batch v4: root-family sweep, roots starting צ
+# Source: compiled from general knowledge of Modern Hebrew (AI-assisted),
+# filtered against the existing dataset by scripts/new_words.py.
+# License: CC0 1.0 (public domain), see LICENSE.
+
+הצהבה
+הצהבת
+הצללות
+הצלפתה
+הצלפתו
+הצרחה
+הצרחות
+לצדוק
+מצדדי
+מצדדיה
+מצדדיהם
+מצדדיהן
+מצדדיו
+מצהלות
+מצודי
+מצולעות
+מצולעת
+מצחיקן
+מצחיקניות
+מצחיקנים
+מצחיקנית
+מצטייני
+מציעי
+מצליחן
+מצליחנות
+מצליחניות
+מצליחנים
+מצליחנית
+מצמדי
+צבוטה
+צבוטות
+צבוטים
+צהובוני
+צהלול
+צהלולים
+צוללנות
+צועניים
+צופיה
+צופיהם
+צופיהן
+צופיו
+צי
+ציטטתה
+ציטטתו
+ציים
+ציפתו
+צליינות
+צלמוות
+צניפי
+צנעת
+צרפתייה

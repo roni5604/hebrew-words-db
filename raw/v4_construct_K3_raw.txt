@@ -1,0 +1,46 @@
+# Batch v4: construct plurals / possessives of participles and agent nouns, list K3
+# Source: compiled from general knowledge of Modern Hebrew (AI-assisted),
+# filtered against the existing dataset by scripts/new_words.py.
+# License: CC0 1.0 (public domain), see LICENSE.
+
+נעימי
+נרדפי
+נתמכי
+סובלי
+סוללי
+עדיני
+עטויי
+עטופי
+עטורי
+עלובי
+עמוסי
+עמילי
+עקורי
+ערופי
+עריקי
+פוקדי
+פורעי
+פורשי
+פושטי
+פותרי
+פזורי
+פסולי
+פעורי
+פקוחי
+פרועי
+צועדי
+קוטפי
+קטועי
+רדופי
+רהוטי
+שוללי
+שותי
+שחומי
+שכוחי
+שלוחי
+שלוחיה
+שלוחיהם
+שלוחיהן
+שלוחיו
+שנואי
+תאבי
