@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "hebrew-wordlist"
 version = "1.2.0"  # overwritten from the git tag by .github/workflows/release.yml
-description = "The largest public-domain (CC0) list of Hebrew words - 183k+ words incl. inflections. No dependencies."
+description = "The largest public-domain (CC0) list of Hebrew words - 182k+ words incl. inflections. No dependencies."
 readme = "README.md"
 requires-python = ">=3.9"
 license = { text = "MIT (code) / CC0-1.0 (word data)" }
