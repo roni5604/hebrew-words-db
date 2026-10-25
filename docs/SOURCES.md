@@ -80,3 +80,12 @@ batch is built. Word-family "gap detectors" (e.g. lemmas missing possessive
 forms, verbs missing tenses) and root-by-root sweeps are used to decide
 *what* to look for — the words themselves are still written from knowledge
 of Modern Hebrew, not copied from another list.
+
+## Removal audits
+
+In October 2026 every published word that an older open spell-checker
+dictionary (Hspell, AGPL) does not recognise was reviewed by hand, and
+clear errors were removed (invented inflections, wrong plurals, defective
+spellings). The spell-checker was used only as a *filter for what to
+review* — absence from it was never treated as an error on its own, and no
+word was ever copied or added from it.
