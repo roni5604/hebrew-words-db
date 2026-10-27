@@ -125,6 +125,21 @@ def main() -> None:
             "\n".join(letter_words) + "\n", encoding="utf-8"
         )
 
+    # Game-ready copy for word-search games such as "מצא את המילה"
+    # (WordboxGame): final letters normalized to their base form (the board
+    # never shows ך ם ן ף ץ), 2-9 letters, deduplicated after normalization,
+    # sorted. Drop-in replacement for assets/dictionaries/he_words.json.
+    game_dir = DATA_DIR / "game"
+    game_dir.mkdir(parents=True, exist_ok=True)
+    unfinal = str.maketrans("ךםןףץ", "כמנפצ")
+    game_words = sorted({w.translate(unfinal) for w in words if 2 <= len(w) <= 9})
+    (game_dir / "he_words_game.json").write_text(
+        json.dumps(game_words, ensure_ascii=False), encoding="utf-8"
+    )
+    (game_dir / "he_words_game.txt").write_text(
+        "\n".join(game_words) + "\n", encoding="utf-8"
+    )
+
     # Split by length (games: Wordle = 5 letters, crosswords, Boggle).
     by_length_dir = DATA_DIR / "by_length"
     by_length_dir.mkdir(parents=True, exist_ok=True)
