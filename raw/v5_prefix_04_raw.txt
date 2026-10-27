@@ -1,0 +1,48 @@
+# Batch v5: two-letter prefix sweep, group 04
+# Source: compiled from general knowledge of Modern Hebrew (AI-assisted),
+# filtered against the existing dataset by scripts/new_words.py.
+# License: CC0 1.0 (public domain), see LICENSE.
+
+ויולנטי
+ויולנטיות
+ויולנטיים
+ויולנטית
+ויטלי
+ויטליים
+ויטלית
+וייבים
+ולואציות
+ולידציות
+ולסים
+ונדטה
+ונדטות
+ורדיקט
+ורדיקטים
+זובור
+זורנל
+זורנלים
+זנבנים
+זנית
+זעיקות
+זעיקת
+זפזופים
+חדילה
+חדילת
+חודרנות
+חודרנותה
+חודרנותו
+חוכמולוג
+חוכמולוגיות
+חוכמולוגים
+חוכמולוגית
+חומרא
+חונן
+חוננה
+חוננו
+חושפנות
+חושפנותה
+חושפנותו
+חיבוטי
+חיבוטים
+חינגה
+חינגות
