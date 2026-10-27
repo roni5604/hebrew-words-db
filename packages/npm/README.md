@@ -1,6 +1,6 @@
 # hebrew-wordlist
 
-The largest public-domain (CC0) list of Hebrew words — 191,000+ words including plurals, verb conjugations and adjective forms. Zero dependencies. Data from [github.com/roni5604/hebrew-words-db](https://github.com/roni5604/hebrew-words-db).
+The largest public-domain (CC0) list of Hebrew words — 192,000+ words including plurals, verb conjugations and adjective forms. Zero dependencies. Data from [github.com/roni5604/hebrew-words-db](https://github.com/roni5604/hebrew-words-db).
 
 ```bash
 npm install hebrew-wordlist
@@ -9,7 +9,7 @@ npm install hebrew-wordlist
 ```js
 const hebrew = require('hebrew-wordlist');
 
-hebrew.length;              // 191000+
+hebrew.length;              // 192000+
 hebrew.isWord('שלום');      // true
 hebrew.ofLength(5);         // five-letter words (Hebrew Wordle)
 hebrew.startingWith('מח');  // prefix search
