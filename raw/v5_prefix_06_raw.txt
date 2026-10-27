@@ -1,0 +1,45 @@
+# Batch v5: two-letter prefix sweep, group 06
+# Source: compiled from general knowledge of Modern Hebrew (AI-assisted),
+# filtered against the existing dataset by scripts/new_words.py.
+# License: CC0 1.0 (public domain), see LICENSE.
+
+ימבה
+יפיופה
+יקבניות
+יקבנים
+יקבנית
+יקרת
+ירבוז
+ירבוזים
+יתירים
+כאחד
+כולין
+כוראל
+כוראלים
+כיאה
+כיאות
+כייפן
+כייפניות
+כייפנים
+כייפנית
+כימרה
+כימרות
+כיסון
+כיסונים
+כיפף
+כיפפה
+כיפפו
+כיפפנו
+כיפפת
+כיפפתי
+כיפפתם
+כיפפתן
+כלבנות
+כרוכיות
+כרוכית
+כרונוגרף
+כרונוגרפים
+כרוניקאי
+כרוניקאיות
+כרוניקאים
+כרוניקאית
