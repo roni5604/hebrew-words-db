@@ -44,7 +44,7 @@ import urllib.request
 URL = "https://raw.githubusercontent.com/roni5604/hebrew-words-db/main/data/words.txt"
 words = urllib.request.urlopen(URL).read().decode("utf-8").split()
 hebrew = set(words)
-print(len(hebrew), "שלום" in hebrew)   # 191213 True
+print(len(hebrew), "שלום" in hebrew)   # 191533 True
 ```
 
 **pandas**
