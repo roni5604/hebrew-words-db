@@ -1,0 +1,46 @@
+# Batch v5: two-letter prefix sweep, group 15
+# Source: compiled from general knowledge of Modern Hebrew (AI-assisted),
+# filtered against the existing dataset by scripts/new_words.py.
+# License: CC0 1.0 (public domain), see LICENSE.
+
+תכסית
+תכשיטני
+תלוית
+תמטיקה
+תמיהותיי
+תמימת
+תמלחות
+תמלחת
+תמרוקיות
+תמרוקייה
+תמרות
+תעלולניות
+תעלולנית
+תעמלניה
+תעמלניו
+תפוד
+תפודים
+תפישה
+תפישות
+תפישותיה
+תפישותיהם
+תפישותיהן
+תפישותיו
+תפישת
+תפישתה
+תפישתו
+תפישתם
+תפישתן
+תפקידני
+תפקידניה
+תפקידניו
+תפקידניות
+תפקידנים
+תפקידנית
+תצורותיה
+תצורותיו
+תצפיתניה
+תצפיתניו
+תקליטנות
+תשחורת
+תת
