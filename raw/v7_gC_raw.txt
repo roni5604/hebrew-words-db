@@ -1,0 +1,24 @@
+# Batch v7: inflection-gap check, gC
+# Source: compiled from general knowledge of Modern Hebrew (AI-assisted),
+# filtered against the existing dataset by scripts/new_words.py.
+# License: CC0 1.0 (public domain), see LICENSE.
+
+בהאיים
+גזלניים
+דגניות
+הינדואיים
+חשמונאיים
+ישועיים
+כפרניים
+מלטזיים
+ממלוכיים
+נורבגיים
+ניאנדרטליים
+עקשניים
+פטפטניים
+פלקסיביליות
+פרבוסלביים
+קיוטיים
+רברבניים
+שוויצריים
+שקרניים

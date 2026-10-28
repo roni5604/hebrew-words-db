@@ -1,0 +1,32 @@
+# Batch v7: inflection-gap check, gA
+# Source: compiled from general knowledge of Modern Hebrew (AI-assisted),
+# filtered against the existing dataset by scripts/new_words.py.
+# License: CC0 1.0 (public domain), see LICENSE.
+
+אגנדת
+אוברטורת
+אונקיית
+אושיית
+אידאת
+איוושת
+אינתיפאדת
+איצטבת
+אנתולוגיית
+אסכולת
+אצטבת
+בזיליקת
+ביאנלת
+גימנסיית
+גלקסיית
+מטמנת
+מטריצת
+מרינת
+סוויטת
+סינתזת
+ספיקת
+סצינת
+פיצריית
+קומונת
+קונבנציית
+קריטיקת
+רפובליקת

@@ -1,0 +1,35 @@
+# Batch v7: inflection-gap check, gM
+# Source: compiled from general knowledge of Modern Hebrew (AI-assisted),
+# filtered against the existing dataset by scripts/new_words.py.
+# License: CC0 1.0 (public domain), see LICENSE.
+
+אכסנאיות
+אכסנאית
+אלחוטאיות
+אלכימאיות
+אלכימאית
+אלקטרונאיות
+אנליטיקאיות
+בנאיות
+בנאית
+בנזינאיות
+בנזינאית
+גולפאיות
+גולפאית
+דבוראיות
+דגלניות
+דגלנית
+דפוסאיות
+זעמניות
+זעמנית
+זעפניות
+ייבואניות
+מסאיות
+עגורנאיות
+עגורנאית
+פירוטכנאיות
+צלייניות
+קלעניות
+קלענית
+שריונאיות
+שריונאית
