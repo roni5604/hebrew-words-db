@@ -1,0 +1,18 @@
+# Batch v6: pattern-based 4-letter check, f4
+# Source: compiled from general knowledge of Modern Hebrew (AI-assisted),
+# filtered against the existing dataset by scripts/new_words.py.
+# License: CC0 1.0 (public domain), see LICENSE.
+
+יושן
+יושנה
+יושנו
+יושנם
+כפיה
+כפיהם
+כפיהן
+כפיו
+כפיי
+כפייך
+כפיך
+כפיכם
+כפיכן

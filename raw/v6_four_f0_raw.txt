@@ -1,0 +1,32 @@
+# Batch v6: pattern-based 4-letter check, f0
+# Source: compiled from general knowledge of Modern Hebrew (AI-assisted),
+# filtered against the existing dataset by scripts/new_words.py.
+# License: CC0 1.0 (public domain), see LICENSE.
+
+אבסם
+אבקי
+אבקך
+אבקכם
+אבקכן
+אבקם
+אבקנו
+אגסך
+אגסכם
+אגסכן
+אגסם
+אגסן
+אגסנו
+אדנך
+אדנכם
+אדנכן
+אדננו
+אטבך
+אטבכם
+אטבכן
+אטבם
+אטבן
+אטבנו
+אתרם
+נבסם
+תבסמו
+תבסמי

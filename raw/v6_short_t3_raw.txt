@@ -1,0 +1,6 @@
+# Batch v6: exhaustive short-word check, t3
+# Source: compiled from general knowledge of Modern Hebrew (AI-assisted),
+# filtered against the existing dataset by scripts/new_words.py.
+# License: CC0 1.0 (public domain), see LICENSE.
+
+כנו

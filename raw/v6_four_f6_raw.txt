@@ -1,0 +1,52 @@
+# Batch v6: pattern-based 4-letter check, f6
+# Source: compiled from general knowledge of Modern Hebrew (AI-assisted),
+# filtered against the existing dataset by scripts/new_words.py.
+# License: CC0 1.0 (public domain), see LICENSE.
+
+התרו
+התרינו
+התרית
+התריתי
+ינוגן
+ינוגנו
+להתרות
+מנוגן
+מנוגנות
+מנוגנים
+מנוגנת
+מנוסר
+מנוסרות
+מנוסרים
+מנוסרת
+מראי
+משאת
+משנת
+משנתה
+משנתו
+משנתך
+משנתכם
+משנתכן
+משנתם
+משנתן
+משנתנו
+מתגיי
+מתגייך
+מתגיך
+מתגיכם
+מתגיכן
+מתגינו
+מתגך
+מתגכם
+מתגכן
+מתגם
+מתגן
+מתגנו
+מתרה
+מתרות
+נוגן
+נוגנה
+נוגנו
+נוסר
+נוסרה
+נוסרו
+תנוגן

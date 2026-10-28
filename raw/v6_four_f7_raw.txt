@@ -1,0 +1,25 @@
+# Batch v6: pattern-based 4-letter check, f7
+# Source: compiled from general knowledge of Modern Hebrew (AI-assisted),
+# filtered against the existing dataset by scripts/new_words.py.
+# License: CC0 1.0 (public domain), see LICENSE.
+
+אסבב
+יסבב
+יסבבו
+לסבב
+מסבב
+מסבבות
+מסבבים
+מסבבת
+נסבב
+סיבב
+סיבבה
+סיבבו
+סיבבנו
+סיבבת
+סיבבתי
+סיבבתם
+סיבבתן
+תסבב
+תסבבו
+תסבבי

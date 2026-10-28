@@ -1,0 +1,4 @@
+# Batch v6: Hebrew letter names missing from the list (exhaustive short-word check)
+פא
+חית
+טית

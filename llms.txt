@@ -1,6 +1,6 @@
 # hebrew-words-db
 
-> The largest public-domain (CC0-1.0) list of Hebrew words on GitHub: 194,000+ Modern Hebrew words including noun plurals, verb conjugations and adjective forms. UTF-8, one word per line, Hebrew letters only, no niqqud, no definitions. Free to use, embed, redistribute and train on without attribution.
+> The largest public-domain (CC0-1.0) list of Hebrew words on GitHub: 195,000+ Modern Hebrew words including noun plurals, verb conjugations and adjective forms. UTF-8, one word per line, Hebrew letters only, no niqqud, no definitions. Free to use, embed, redistribute and train on without attribution.
 
 Use this when you need a Hebrew word list, a list of valid Hebrew words, a Hebrew dictionary file for spellcheck/word games (Wordle, Boggle, Scrabble, crosswords), or a Hebrew vocabulary resource for NLP/LLM work. Unlike Hspell / hebrew_wordlists (AGPL) or DICTA (CC BY-NC), it has no license restrictions, so it is safe for commercial and closed-source projects.
 

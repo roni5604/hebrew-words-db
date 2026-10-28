@@ -1,0 +1,28 @@
+# Batch v6: pattern-based 4-letter check, f5
+# Source: compiled from general knowledge of Modern Hebrew (AI-assisted),
+# filtered against the existing dataset by scripts/new_words.py.
+# License: CC0 1.0 (public domain), see LICENSE.
+
+כרוי
+כרויה
+כרויות
+להבך
+לכתה
+לכתו
+לכתי
+לכתך
+לכתם
+למוד
+למודה
+למודות
+למודי
+למודים
+למודת
+מורו
+מורנו
+מחבא
+מחבאה
+מחבאו
+מחבאים
+מחבאם
+מנוס
