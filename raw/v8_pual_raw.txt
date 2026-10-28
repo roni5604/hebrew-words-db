@@ -1,0 +1,37 @@
+# Batch v8: missing pu'al participles
+# Source: compiled from general knowledge of Modern Hebrew (AI-assisted),
+# filtered against the existing dataset by scripts/new_words.py.
+# License: CC0 1.0 (public domain), see LICENSE.
+
+מבודר
+מבודרות
+מבודרים
+מבודרת
+מבורר
+מבוררות
+מבוררים
+מבוררת
+מגומד
+מגומדות
+מגומדים
+מגומדת
+ממורר
+ממוררות
+ממוררים
+ממוררת
+מפושל
+מפושלות
+מפושלים
+מפושלת
+משוחק
+משוחקות
+משוחקים
+משוחקת
+משוטח
+משוטחות
+משוטחים
+משוטחת
+משוכל
+משוכלות
+משוכלים
+משוכלת

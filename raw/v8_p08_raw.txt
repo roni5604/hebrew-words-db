@@ -1,0 +1,31 @@
+# Batch v8: words found by playing the game's level boards, p08
+# Source: compiled from general knowledge of Modern Hebrew (AI-assisted),
+# filtered against the existing dataset by scripts/new_words.py.
+# License: CC0 1.0 (public domain), see LICENSE.
+
+דבילי
+דביליים
+חרפניות
+חרפנים
+חרפנית
+מחופר
+מחופרות
+מחופרים
+מחופרת
+מחוצב
+מחוצבות
+מחוצבים
+מחוצבת
+מירוח
+מכמיר
+מכמירה
+מכמירות
+מכמירים
+מסותר
+מסותרות
+מסותרים
+מסותרת
+מרותח
+מרותחות
+מרותחים
+מרותחת

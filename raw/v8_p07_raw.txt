@@ -1,0 +1,16 @@
+# Batch v8: words found by playing the game's level boards, p07
+# Source: compiled from general knowledge of Modern Hebrew (AI-assisted),
+# filtered against the existing dataset by scripts/new_words.py.
+# License: CC0 1.0 (public domain), see LICENSE.
+
+השתרבבת
+השתרבבתי
+יתוקשר
+יתוקשרו
+לחשנים
+מתירן
+מתירנים
+תוקשר
+תוקשרה
+תוקשרו
+תתוקשר
